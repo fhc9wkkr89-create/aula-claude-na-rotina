@@ -227,6 +227,15 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 .fc__box--end .fc__n { background: var(--good); }
 .fc__plus { font-family: var(--font-display); font-size: 30px; color: var(--gold); line-height: 1; margin: 6px 0; }
 
+.shot { position: relative; margin: 20px 0 6px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot__mark { position: absolute; transform: translate(-50%, -50%); border: 4px solid var(--gold); border-radius: 12px; box-shadow: 0 0 0 4px rgba(206,141,57,.25); pointer-events: none; }
+.shot__n { position: absolute; transform: translate(-50%, -50%); width: 30px; height: 30px; border-radius: 50%; background: var(--gold); color: var(--navy); font-weight: 700; display: grid; place-items: center; font-size: 16px; }
+.shot-cap { font-size: 15px; color: var(--ink-mute); margin: 0 0 18px; }
+.steps-big { counter-reset: st; list-style: none; padding: 0 !important; }
+.steps-big li { counter-increment: st; position: relative; padding: 10px 0 10px 50px; border-bottom: 1px solid var(--line); margin: 0; }
+.steps-big li::before { content: counter(st); position: absolute; left: 0; top: 10px; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: minmax(0,1fr); }
   .sidebar { display: none; position: fixed; inset: calc(env(safe-area-inset-top, 0px) + var(--head-h)) 0 0 0; max-height: none; z-index: 48; background: var(--bg); border-right: 0; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -262,16 +271,17 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 <div class="layout">
 <aside class="sidebar">
   <div class="sidebar__group is-visible" data-aula="1">
-    <div class="sidebar__eyebrow">Parte 1 · 7 módulos</div>
+    <div class="sidebar__eyebrow">Parte 1 · 8 módulos</div>
     <h2 class="sidebar__title">Deixar o computador pronto</h2>
     <ul class="sidebar__nav">
       <li class="sidebar__item" data-target="m25"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>As gavetas da sua vida</span></li>
       <li class="sidebar__item" data-target="m01"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>O que instalar (e o que não precisa)</span></li>
-      <li class="sidebar__item" data-target="m24"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>Conhecendo o Claude: modelos, modos e limite</span></li>
-      <li class="sidebar__item" data-target="m23"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>Dicionário de bolso</span></li>
-      <li class="sidebar__item" data-target="m02"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>A pasta de trabalho</span></li>
-      <li class="sidebar__item" data-target="m03"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>As 3 chaves: quanto acesso dar</span></li>
-      <li class="sidebar__item" data-target="m04"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Teste de 5 minutos</span></li>
+      <li class="sidebar__item" data-target="m26"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>Instalar, assinar e ligar o Chrome (com prints)</span></li>
+      <li class="sidebar__item" data-target="m24"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>Conhecendo o Claude: modelos, modos e limite</span></li>
+      <li class="sidebar__item" data-target="m23"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>Dicionário de bolso</span></li>
+      <li class="sidebar__item" data-target="m02"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>A pasta de trabalho</span></li>
+      <li class="sidebar__item" data-target="m03"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>As 3 chaves: quanto acesso dar</span></li>
+      <li class="sidebar__item" data-target="m04"><span class="sidebar__num"><span class="sidebar__num-text">08</span></span><span>Teste de 5 minutos</span></li>
     </ul>
   </div>
   <div class="sidebar__group" data-aula="2">
@@ -382,7 +392,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
     <p>Ninguém conecta todas as gavetas num dia. Você conecta uma, usa, e na semana seguinte conecta outra. Quanto mais corrida a sua rotina, mais gavetas há para conectar e mais tempo você ganha.</p>
   </div>
 
-  <p class="prompt-hint">Guarde este prompt para usar depois do Módulo 07, quando o app já estiver instalado.</p>
+  <p class="prompt-hint">Guarde este prompt para usar depois do Módulo 08, quando o app já estiver instalado.</p>
   <div class="prompt"><div class="prompt__head"><span>Prompt · mapear as minhas gavetas</span><button class="prompt__copy">Copiar</button></div><pre>Quero descobrir onde eu perco tempo. Me faz perguntas, uma de cada vez, sobre as tarefas que eu repito ou adio na semana.
 Para cada tarefa, anota: em que app ou lugar ela mora, quantas vezes por semana eu faço e qual via resolveria (conector, pasta, skill, Chrome ou rotina).
 No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar primeiro.</pre></div>
@@ -439,8 +449,82 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
   </div>
 </article>
 
-<article id="m24" class="module" data-aula="1" data-title="Conhecendo o Claude">
+<article id="m26" class="module" data-aula="1" data-title="Instalar passo a passo">
   <div class="module__eyebrow">Parte 1 · Módulo 03</div>
+  <h1 class="module__title">Instalar, assinar e ligar o Chrome: <span class="accent">passo a passo.</span></h1>
+  <span class="module__tag">Setup</span>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Três tarefas, na ordem: baixar o app, assinar o plano Pro e colocar a extensão no Chrome.</p></div>
+  <p class="lead">Faça com calma, uma tarefa de cada vez. Nos prints, o círculo dourado mostra onde clicar. As telas podem mudar um pouco com o tempo, mas os botões ficam no mesmo lugar.</p>
+
+  <h2>1. Baixar o app do Claude no computador</h2>
+  <ol class="steps-big">
+    <li>No navegador, abra o endereço <strong>claude.com/download</strong>.</li>
+  </ol>
+  <div class="shot"><img src="img/print-download.jpg" alt="Página de download do Claude com o botão Download for macOS em destaque" loading="lazy" width="800" height="500"><span class="shot__mark" style="left:50.00%;top:48.60%;width:21.25%;height:6.80%"></span><span class="shot__n" style="left:39.38%;top:45.20%">1</span></div>
+  <p class="shot-cap">O botão grande no meio já reconhece o seu computador.</p>
+  <ol class="steps-big" start="2" style="counter-reset: st 1">
+    <li>Clique no botão preto grande (no Mac aparece <strong>Download for macOS</strong>). Se preferir escolher, role a página até <strong>Desktop</strong>.</li>
+  </ol>
+  <div class="shot"><img src="img/print-download-opcoes.jpg" alt="Lista de downloads: macOS, Windows, Windows arm 64" loading="lazy" width="800" height="500"><span class="shot__mark" style="left:57.62%;top:57.80%;width:9.00%;height:5.60%"></span><span class="shot__n" style="left:53.12%;top:55.00%">M</span><span class="shot__mark" style="left:57.62%;top:66.40%;width:9.00%;height:5.60%"></span><span class="shot__n" style="left:53.12%;top:63.60%">W</span></div>
+  <p class="shot-cap">M: botão para Mac. W: botão para Windows (a maioria dos computadores com Windows usa este).</p>
+  <ol class="steps-big" start="3" style="counter-reset: st 2">
+    <li><strong>No Mac:</strong> abra o arquivo baixado (na pasta Downloads), arraste o ícone do Claude para a pasta <strong>Aplicativos</strong> e abra o Claude por lá.</li>
+    <li><strong>No Windows:</strong> abra o arquivo baixado (na pasta Downloads) e siga as telas até o fim.</li>
+    <li>Com o app aberto, clique para entrar e use o mesmo e-mail da sua conta do Claude (pode ser com o Google). Se ele mandar um código para o seu e-mail, copie o código no app.</li>
+  </ol>
+  <div class="callout callout--good">
+    <div class="callout__label">◆ Deu certo quando</div>
+    <p>O app abre e mostra uma caixa para escrever, com as abas Chat, Cowork e Code em cima.</p>
+  </div>
+
+  <h2>2. Assinar o plano Pro</h2>
+  <p>A aba Code e a extensão do Chrome pedem plano pago. Os planos:</p>
+  <div class="shot"><img src="img/print-planos.jpg" alt="Página de planos do Claude: Free, Pro, Max e Ultra, com preços em reais" loading="lazy" width="800" height="500"><span class="shot__mark" style="left:38.38%;top:76.00%;width:21.25%;height:38.00%"></span><span class="shot__n" style="left:27.75%;top:57.00%">1</span></div>
+  <p class="shot-cap">O Pro (destacado) é suficiente para começar. Os preços da tela são de 17/11/2026 e podem mudar.</p>
+  <ol class="steps-big">
+    <li>No app do Claude, clique no seu nome ou nas suas iniciais, no <strong>canto de baixo, à esquerda</strong>.</li>
+    <li>Procure a opção de <strong>upgrade</strong> (pode aparecer como "Upgrade plan" ou "Fazer upgrade").</li>
+    <li>Escolha <strong>Pro</strong>. Se for pagar por ano, sai mais barato por mês.</li>
+    <li>Digite os dados do seu cartão você mesmo, na tela de pagamento. Nunca cole o número do cartão numa conversa com o Claude.</li>
+    <li>Feche e abra o app de novo.</li>
+  </ol>
+  <div class="callout">
+    <div class="callout__label">◆ Não achou o botão?</div>
+    <p>Abra <strong>claude.com/pricing</strong> no navegador, entre na sua conta e clique em <strong>Try Claude</strong> embaixo do Pro.</p>
+  </div>
+
+  <h2>3. Colocar a extensão no Chrome</h2>
+  <p>Funciona só no navegador <strong>Google Chrome</strong>. Abra o Chrome antes de começar.</p>
+  <ol class="steps-big">
+    <li>No Chrome, abra o endereço <strong>claude.com/chrome</strong>.</li>
+  </ol>
+  <div class="shot"><img src="img/print-chrome.jpg" alt="Página do Claude in Chrome com o botão Add to Chrome em destaque" loading="lazy" width="800" height="500"><span class="shot__mark" style="left:50.00%;top:67.60%;width:14.00%;height:5.60%"></span><span class="shot__n" style="left:43.00%;top:64.80%">2</span></div>
+  <p class="shot-cap">Clique em Add to Chrome.</p>
+  <ol class="steps-big" start="2" style="counter-reset: st 1">
+    <li>Clique em <strong>Add to Chrome</strong>. Vai abrir a loja do Chrome.</li>
+    <li>Na loja, clique no botão azul <strong>Usar no Chrome</strong> (ou "Adicionar ao Chrome").</li>
+    <li>Vai aparecer uma janelinha perguntando se quer adicionar. Clique em <strong>Adicionar extensão</strong>.</li>
+    <li>No canto de cima, à direita do Chrome, clique no ícone de <strong>peça de quebra-cabeça</strong>. Ache o Claude na lista e clique no <strong>alfinete</strong> do lado, para ele ficar sempre à vista.</li>
+    <li>Clique no ícone do Claude e entre com a mesma conta do app.</li>
+  </ol>
+  <div class="callout callout--good">
+    <div class="callout__label">◆ Deu certo quando</div>
+    <p>Ao clicar no ícone do Claude, abre um painel do lado direito do Chrome com uma caixa para escrever.</p>
+  </div>
+
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>App baixado, plano Pro assinado e extensão no Chrome. Com isso, tudo o que vem depois funciona.</p></div>
+  <div class="checkpoints">
+    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
+    <ul class="checkpoints__list">
+      <li><span class="check"></span><span>Baixei e abri o app do Claude, e entrei na minha conta.</span></li>
+      <li><span class="check"></span><span>Assinei o plano Pro.</span></li>
+      <li><span class="check"></span><span>Coloquei a extensão no Chrome e fixei o ícone.</span></li>
+    </ul>
+  </div>
+</article>
+
+<article id="m24" class="module" data-aula="1" data-title="Conhecendo o Claude">
+  <div class="module__eyebrow">Parte 1 · Módulo 04</div>
   <h1 class="module__title">Conhecendo o Claude: <span class="accent">modelos, modos e limite.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Você escolhe qual cérebro usar, quanta liberdade dar a ele e acompanha quanto do plano já gastou.</p></div>
@@ -498,7 +582,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 </article>
 
 <article id="m23" class="module" data-aula="1" data-title="Dicionário de bolso">
-  <div class="module__eyebrow">Parte 1 · Módulo 04</div>
+  <div class="module__eyebrow">Parte 1 · Módulo 05</div>
   <h1 class="module__title">Dicionário <span class="accent">de bolso.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Dez palavras que vão aparecer a aula inteira, explicadas sem complicação.</p></div>
@@ -534,7 +618,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 </article>
 
 <article id="m02" class="module" data-aula="1" data-title="A pasta de trabalho">
-  <div class="module__eyebrow">Parte 1 · Módulo 05</div>
+  <div class="module__eyebrow">Parte 1 · Módulo 06</div>
   <h1 class="module__title">Uma pasta para o Claude <span class="accent">morar.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Primeiro você cria a pasta no computador. Depois abre essa pasta no Claude e ele monta o resto.</p></div>
@@ -592,7 +676,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 </article>
 
 <article id="m03" class="module" data-aula="1" data-title="As 3 chaves">
-  <div class="module__eyebrow">Parte 1 · Módulo 06</div>
+  <div class="module__eyebrow">Parte 1 · Módulo 07</div>
   <h1 class="module__title">Quanto acesso dar: <span class="accent">as 3 chaves.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Você escolhe quanto do seu computador o Claude pode ver: uma pasta, tudo ou a tela.</p></div>
@@ -631,7 +715,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 </article>
 
 <article id="m04" class="module" data-aula="1" data-title="Teste de 5 minutos">
-  <div class="module__eyebrow">Parte 1 · Módulo 07</div>
+  <div class="module__eyebrow">Parte 1 · Módulo 08</div>
   <h1 class="module__title">Teste de <span class="accent">5 minutos.</span></h1>
   <span class="module__tag tag--good">Checklist</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Quatro testes rápidos para saber se está tudo ligado.</p></div>
@@ -641,7 +725,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     <div class="kv__row"><div class="kv__key">1 · Pasta</div><div class="kv__val">Aba Code → escolha sua pasta "Claude" → pergunte <em>"o que tem nesta pasta?"</em>. Ele deve listar as subpastas.</div></div>
     <div class="kv__row"><div class="kv__key">2 · Conectores</div><div class="kv__val">No app, abra a área de <strong>conectores</strong> (fica junto de plugins e skills; se não achar, procure "Conectores" nas configurações) e conecte <strong>Gmail</strong>, <strong>Google Agenda</strong> e <strong>Google Drive</strong>. Teste: <em>"o que tenho na agenda amanhã?"</em></div></div>
     <div class="kv__row"><div class="kv__key">3 · Chrome</div><div class="kv__val">Abra a extensão, faça login e peça: <em>"abre o site do clima e me diz a previsão de amanhã"</em>.</div></div>
-    <div class="kv__row"><div class="kv__key">4 · Permissões</div><div class="kv__val">Quando o Claude pedir permissão para uma ação, leia antes de aceitar. No começo, deixe no modo <strong>Manual</strong>, que pergunta antes de agir (Módulo 03 desta parte: Conhecendo o Claude).</div></div>
+    <div class="kv__row"><div class="kv__key">4 · Permissões</div><div class="kv__val">Quando o Claude pedir permissão para uma ação, leia antes de aceitar. No começo, deixe no modo <strong>Manual</strong>, que pergunta antes de agir (Módulo 04 desta parte: Conhecendo o Claude).</div></div>
   </div>
 
   <div class="callout callout--good">
