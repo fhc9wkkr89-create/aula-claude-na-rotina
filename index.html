@@ -2,48 +2,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Claude na Rotina</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Aula prática: setup do Claude, os 3 pilares da produtividade com IA e 7 atividades para a rotina.">
+<meta name="description" content="The Med Circle · Aula prática: setup do Claude, os 3 pilares da produtividade com IA e 7 atividades para a rotina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
 /* Layout: cabeçalho com abas por parte da aula, trilha lateral numerada, leitura paginada com anterior/próximo. */
 :root {
-  /* Boston Research Society: bordô, azul marinho, dourado, bege, azul claro. Fundo sempre branco. */
-  --navy: #022C45;
-  --bordo: #7F0A21;
-  --gold: #CE8D39;
-  --beige: #E5DBCF;
-  --sky: #6A8DA3;
-  --bg: #FFFFFF;
-  --paper: #FFFFFF;
-  --ink: #14212B;
-  --ink-soft: #2C3944;
-  --ink-mute: #55626C;
-  --line: #E4DED5;
-  --accent: #022C45;
-  --accent-deep: #7F0A21;
-  --accent-wash: #F7F2EB;
-  --good: #2E6B4F;
-  --good-wash: #EBF3EE;
-  --warn: #8E5A12;
-  --warn-wash: #FBF4E6;
-  --alert: #7F0A21;
-  --alert-wash: #F8ECEE;
-  --code-bg: #022C45;
-  --code-fg: #F4EFE8;
-  --head-bg: #FFFFFF;
-  --head-fg: #022C45;
-  --font-display: 'Crimson Pro', 'Minion Pro', Georgia, 'Times New Roman', serif;
-  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  /* The Med Circle: aveia como base, castanho nobre, âmbar só como brasa. Nunca branco puro. */
+  --navy: #3E2A1E;
+  --bordo: #A85F2C;
+  --gold: #C87A33;
+  --beige: #E7DCC6;
+  --sky: #B9A887;
+  --bg: #F0E7D6;
+  --paper: #F5EFE1;
+  --ink: #1B1712;
+  --ink-soft: #3A342C;
+  --ink-mute: #6E6557;
+  --line: #CDC2AA;
+  --accent: #3E2A1E;
+  --accent-deep: #A85F2C;
+  --accent-wash: #E7DCC6;
+  --good: #55693A;
+  --good-wash: #E5E3C9;
+  --warn: #8A5A1E;
+  --warn-wash: #F1E2C8;
+  --alert: #8E3A20;
+  --alert-wash: #F0DCCD;
+  --code-bg: #3E2A1E;
+  --code-fg: #F5EFE1;
+  --head-bg: #F0E7D6;
+  --head-fg: #1B1712;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --head-h: 68px;
   --side-w: 300px;
   color-scheme: light;
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 18.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 20.5px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--head-bg); }
 a { color: var(--accent-deep); }
 button { font: inherit; color: inherit; }
@@ -77,7 +77,7 @@ button { font: inherit; color: inherit; }
 .sidebar__group { display: none; }
 .sidebar__group.is-visible { display: block; }
 .sidebar__eyebrow { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent-deep); font-weight: 700; }
-.sidebar__title { font-family: var(--font-display); font-size: 24px; font-weight: 600; line-height: 1.2; margin: 6px 0 18px; text-wrap: balance; }
+.sidebar__title { font-family: var(--font-display); font-size: 27px; font-weight: 600; line-height: 1.2; margin: 6px 0 18px; text-wrap: balance; }
 .sidebar__nav { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .sidebar__item { display: flex; gap: 12px; align-items: center; padding: 9px 10px; border-radius: 9px; cursor: pointer; color: var(--ink-soft); font-size: 16px; line-height: 1.4; }
 .sidebar__item:hover { background: var(--accent-wash); }
@@ -95,14 +95,14 @@ button { font: inherit; color: inherit; }
 @keyframes fade { from { opacity: .4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .module.is-active { animation: none; } .progress__fill { transition: none; } }
 .module__eyebrow { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 700; }
-.module__title { font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 44px); line-height: 1.08; letter-spacing: -.005em; margin: 10px 0 14px; font-weight: 600; text-wrap: balance; }
+.module__title { font-family: var(--font-display); font-size: clamp(34px, 5vw, 52px); line-height: 1.08; letter-spacing: -.005em; margin: 10px 0 14px; font-weight: 600; text-wrap: balance; }
 .module__title .accent { color: var(--bordo); }
 .module__tag { display: inline-block; font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 99px; background: var(--navy); color: #fff; }
 .module__tag.tag--good { background: var(--good); color: #fff; }
 .module__tag.tag--case { background: var(--bordo); color: #fff; }
 .module p { margin: 0 0 14px; color: var(--ink-soft); }
-.module p.lead { font-size: 21px; line-height: 1.55; color: var(--ink); margin-top: 22px; }
-.module h2 { font-family: var(--font-display); font-size: 28px; font-weight: 600; line-height: 1.2; margin: 38px 0 12px; text-wrap: balance; }
+.module p.lead { font-size: 23px; line-height: 1.55; color: var(--ink); margin-top: 22px; }
+.module h2 { font-family: var(--font-display); font-size: 32px; font-weight: 600; line-height: 1.2; margin: 38px 0 12px; text-wrap: balance; }
 .module h3 { font-size: 17px; margin: 24px 0 8px; }
 .module ul, .module ol { padding-left: 22px; margin: 0 0 16px; color: var(--ink-soft); }
 .module li { margin-bottom: 6px; }
@@ -160,7 +160,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 .prompt { position: relative; margin: 20px 0; border-radius: 12px; background: var(--code-bg); color: var(--code-fg); }
 .prompt__head { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--beige); }
 .prompt__copy { background: var(--gold); border: 1px solid var(--gold); color: var(--navy); font-weight: 700 !important; border-radius: 8px; padding: 7px 14px; cursor: pointer; font-size: 14px; letter-spacing: 0; text-transform: none; font-weight: 500; }
-.prompt__copy:hover { background: #DDA251; }
+.prompt__copy:hover { background: #D68C47; }
 .prompt pre { margin: 0; padding: 14px 16px 16px; white-space: pre-wrap; word-break: break-word; font-family: var(--font-mono); font-size: 15px; line-height: 1.65; }
 .prompt--cmd pre { white-space: pre; overflow-x: auto; word-break: normal; }
 
@@ -211,10 +211,10 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 .oneline { display: flex; gap: 14px; align-items: flex-start; background: var(--accent-wash); border-radius: 12px; padding: 16px 18px; margin: 20px 0 6px; }
 .oneline__tag { flex: none; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; color: var(--accent-deep); padding-top: 4px; white-space: nowrap; }
 .oneline p { margin: 0 !important; color: var(--ink) !important; font-size: 19px; font-weight: 500; }
-.prompt mark.ph { background: #F2C94C; color: #1D2030; border-radius: 4px; padding: 0 4px; font-weight: 600; }
+.prompt mark.ph { background: #E9C9A0; color: #1B1712; border-radius: 4px; padding: 0 4px; font-weight: 600; }
 .prompt-hint { font-size: 15px; color: var(--ink-mute); margin: -10px 0 18px; }
 .fig { margin: 24px 0; }
-.fig img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--paper); }
+.fig img { filter: sepia(.55) saturate(.75) hue-rotate(-8deg); display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: var(--paper); }
 .fig figcaption { font-size: 15px; color: var(--ink-mute); margin-top: 8px; }
 .fc { display: grid; gap: 0; margin: 24px 0; justify-items: center; }
 .fc__box { width: 100%; max-width: 520px; background: var(--paper); border: 2px solid var(--sky); border-radius: 14px; padding: 14px 18px; display: flex; gap: 14px; align-items: center; }
@@ -236,6 +236,10 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 .steps-big li { counter-increment: st; position: relative; padding: 10px 0 10px 50px; border-bottom: 1px solid var(--line); margin: 0; }
 .steps-big li::before { content: counter(st); position: absolute; left: 0; top: 10px; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
 
+/* The Med Circle: rótulos em Helvetica, caixa-alta, tracking largo */
+.module__eyebrow, .sidebar__eyebrow, .callout__label, .oneline__tag, .summary__label, .module__tag, .ref__badge, .prompt__head, .progress, .data-table th, .header__tab__num { font-family: var(--font-mono); }
+.module__eyebrow, .sidebar__eyebrow, .callout__label, .oneline__tag, .summary__label { letter-spacing: .16em; }
+
 @media (max-width: 900px) {
   .layout { grid-template-columns: minmax(0,1fr); }
   .sidebar { display: none; position: fixed; inset: calc(env(safe-area-inset-top, 0px) + var(--head-h)) 0 0 0; max-height: none; z-index: 48; background: var(--bg); border-right: 0; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
@@ -253,7 +257,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 </style>
 
 <header class="header">
-  <a href="#a1-m25" class="header__logo"><img class="header__mark" src="img/brs-brasao.png" alt="Brasão da Boston Research Society" width="40" height="40"><span>Claude na Rotina</span></a>
+  <a href="#a1-m25" class="header__logo"><img class="header__mark" src="img/mark-ink.png" alt="Símbolo do The Med Circle" width="40" height="40"><span>Claude na Rotina</span></a>
   <nav class="header__tabs" aria-label="Partes da aula">
     <button class="header__tab is-active" data-aula="1"><span class="header__tab__num">01</span>Setup</button>
     <button class="header__tab" data-aula="2"><span class="header__tab__num">02</span>Os 3 pilares</button>
@@ -272,45 +276,42 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
 <aside class="sidebar">
   <div class="sidebar__group is-visible" data-aula="1">
     <div class="sidebar__eyebrow">Parte 1 · 8 módulos</div>
-    <h2 class="sidebar__title">Deixar o computador pronto</h2>
+    <h2 class="sidebar__title">Deixar tudo pronto</h2>
     <ul class="sidebar__nav">
       <li class="sidebar__item" data-target="m25"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>As gavetas da sua vida</span></li>
-      <li class="sidebar__item" data-target="m01"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>O que instalar (e o que não precisa)</span></li>
-      <li class="sidebar__item" data-target="m26"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>Instalar, assinar e ligar o Chrome (com prints)</span></li>
-      <li class="sidebar__item" data-target="m02"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>A pasta de trabalho</span></li>
+      <li class="sidebar__item" data-target="m26"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>Instalar o Claude (com prints)</span></li>
+      <li class="sidebar__item" data-target="m02"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>A pasta e as 3 chaves</span></li>
+      <li class="sidebar__item" data-target="m10"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>Conectores</span></li>
       <li class="sidebar__item" data-target="m23"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>Dicionário de bolso</span></li>
-      <li class="sidebar__item" data-target="m24"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>Conhecendo o Claude: modelos, modos e limite</span></li>
-      <li class="sidebar__item" data-target="m03"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>As 3 chaves: quanto acesso dar</span></li>
+      <li class="sidebar__item" data-target="m06"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>Janela de contexto: a mesa</span></li>
+      <li class="sidebar__item" data-target="m24"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Modelos, modos e limite</span></li>
       <li class="sidebar__item" data-target="m04"><span class="sidebar__num"><span class="sidebar__num-text">08</span></span><span>Teste de 5 minutos</span></li>
     </ul>
   </div>
   <div class="sidebar__group" data-aula="2">
-    <div class="sidebar__eyebrow">Parte 2 · 10 módulos</div>
+    <div class="sidebar__eyebrow">Parte 2 · 7 módulos</div>
     <h2 class="sidebar__title">Os 3 pilares da produtividade com IA</h2>
     <ul class="sidebar__nav">
-      <li class="sidebar__item" data-target="m05"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>O mapa: conhecimento, ferramentas, assistentes</span></li>
-      <li class="sidebar__item" data-target="m06"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>Janela de contexto: a mesa do Claude</span></li>
-      <li class="sidebar__item" data-target="m07"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>Pilar 1: conhecimento acumulado x segundo cérebro</span></li>
-      <li class="sidebar__item" data-target="m08"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>Pilar 1: de onde vem o conhecimento</span></li>
-      <li class="sidebar__item" data-target="m09"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>Pilar 1: a gaveta organizada</span></li>
-      <li class="sidebar__item" data-target="m10"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>Pilar 2: as ferramentas do Claude</span></li>
-      <li class="sidebar__item" data-target="m11"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Pilar 2: skills que andam com você</span></li>
-      <li class="sidebar__item" data-target="m22"><span class="sidebar__num"><span class="sidebar__num-text">08</span></span><span>Pilar 2: saber dar feedback</span></li>
-      <li class="sidebar__item" data-target="m12"><span class="sidebar__num"><span class="sidebar__num-text">09</span></span><span>Pilar 2: gastar menos inteligência</span></li>
-      <li class="sidebar__item" data-target="m13"><span class="sidebar__num"><span class="sidebar__num-text">10</span></span><span>Pilar 3: os assistentes</span></li>
+      <li class="sidebar__item" data-target="m05"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>O mapa dos 3 pilares</span></li>
+      <li class="sidebar__item" data-target="m07"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>Conhecimento x segundo cérebro</span></li>
+      <li class="sidebar__item" data-target="m08"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>De onde vem o conhecimento</span></li>
+      <li class="sidebar__item" data-target="m09"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>A gaveta organizada</span></li>
+      <li class="sidebar__item" data-target="m11"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>Skills e rotinas</span></li>
+      <li class="sidebar__item" data-target="m22"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>Saber dar feedback</span></li>
+      <li class="sidebar__item" data-target="m13"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Assistentes, ADM e Dispatch</span></li>
     </ul>
   </div>
   <div class="sidebar__group" data-aula="3">
     <div class="sidebar__eyebrow">Parte 3 · 7 atividades</div>
     <h2 class="sidebar__title">Mão na massa: 7 atividades para a rotina</h2>
     <ul class="sidebar__nav">
-      <li class="sidebar__item" data-target="m14"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>Seu segundo cérebro se alimentando sozinho</span></li>
-      <li class="sidebar__item" data-target="m15"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>Sair das listas de e-mail</span></li>
+      <li class="sidebar__item" data-target="m15"><span class="sidebar__num"><span class="sidebar__num-text">01</span></span><span>Sair das listas de e-mail</span></li>
+      <li class="sidebar__item" data-target="m14"><span class="sidebar__num"><span class="sidebar__num-text">02</span></span><span>Segundo cérebro automático</span></li>
       <li class="sidebar__item" data-target="m16"><span class="sidebar__num"><span class="sidebar__num-text">03</span></span><span>O assistente que lembra o combinado</span></li>
       <li class="sidebar__item" data-target="m17"><span class="sidebar__num"><span class="sidebar__num-text">04</span></span><span>Organizar o Google Drive</span></li>
       <li class="sidebar__item" data-target="m18"><span class="sidebar__num"><span class="sidebar__num-text">05</span></span><span>Projeto com lista de documentos</span></li>
       <li class="sidebar__item" data-target="m19"><span class="sidebar__num"><span class="sidebar__num-text">06</span></span><span>Slides com aprovado, ajustes e reprovado</span></li>
-      <li class="sidebar__item" data-target="m20"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Tarefas chatas no Chrome</span></li>
+      <li class="sidebar__item" data-target="m20"><span class="sidebar__num"><span class="sidebar__num-text">07</span></span><span>Tarefas no Chrome e próximos passos</span></li>
     </ul>
   </div>
 </aside>
@@ -341,6 +342,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
   <figure class="fig"><img src="img/gavetas.jpg" alt="Um móvel antigo com muitas gavetas abertas, cada uma ligada por uma linha dourada a um celular na mão de alguém." loading="lazy" width="1400" height="940"><figcaption>Cada gaveta conectada é uma coisa que você resolve num pedido só.</figcaption></figure>
 
   <h2>Sem conexão: você vai até a gaveta</h2>
+  <p>O que atrasa o seu dia é levantar e ir até a gaveta onde a coisa está.</p>
   <p>Para pegar algo numa gaveta da sua casa, você levanta, anda até ela, abre e procura. Na vida digital é igual. Você acabou de encontrar uma pessoa e precisa marcar uma reunião no Zoom:</p>
   <div class="fc">
   <div class="fc__box"><span class="fc__n">1</span><span class="fc__t">Abrir o computador</span></div>
@@ -367,24 +369,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--accent
     <li><strong>Em que gaveta isso mora?</strong> "Meus documentos ficam no Drive." "Minhas reuniões ficam no Zoom."</li>
     <li><strong>Como o Claude alcança essa gaveta?</strong> Escolha a via (às vezes mais de uma).</li>
   </ol>
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Via</th><th>Para quê</th><th>Exemplo</th></tr></thead>
-    <tbody>
-      <tr><td>Conector</td><td>Um app: Gmail, Agenda, Drive, Zoom, ClickUp.</td><td>"Marca a reunião no Zoom."</td></tr>
-      <tr><td>Pasta</td><td>Os arquivos do seu computador.</td><td>"Organiza os PDFs que estão na pasta entrada."</td></tr>
-      <tr><td>Skill</td><td>O seu jeito de fazer algo, guardado como receita.</td><td>"Escreve o e-mail do jeito que eu escrevo."</td></tr>
-      <tr><td>Chrome</td><td>Um site que não tem conector.</td><td>"Copia para uma planilha os pedidos que aparecem neste site."</td></tr>
-      <tr><td>Rotina</td><td>Abrir a mesma gaveta toda semana, no mesmo horário, com o computador ligado e o app aberto.</td><td>"Toda segunda às 8h, me mostra o que vence na semana."</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>A rotina abre a gaveta por você, no horário marcado. Se toda segunda-feira você precisa ir lá ver a mesma coisa, o Claude pode ir por você.</p>
-
-  <div class="callout">
-    <div class="callout__label">◆ A mão que alcança as gavetas: a aba Code</div>
-    <p>No app do Claude, a aba <strong>Code</strong> é a mão que alcança as gavetas. É por ela que o Claude abre as pastas do seu computador, que a aba Chat não alcança, e usa junto os conectores, as skills e as rotinas que você montou. A aba Cowork também mexe em arquivos, mas nesta aula a gente fica na Code. Pelo celular, dá para usar os apps conectados (Zoom, agenda, e-mail), mas não as pastas do computador.</p>
-  </div>
+  <p>O Claude alcança as gavetas por quatro caminhos, que você vai montar ao longo da aula: uma <strong>pasta</strong> do computador, um <strong>conector</strong> com um app, uma <strong>skill</strong> com o seu jeito de fazer e o <strong>Chrome</strong>, para sites. A <strong>rotina</strong> abre a gaveta sozinha, no horário marcado.</p>
 
   <div class="callout callout--good">
     <div class="callout__label">◆ Uma gaveta por semana</div>
@@ -401,59 +386,26 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
     <ul class="checkpoints__list">
       <li><span class="check"></span><span>Sei explicar a ideia das gavetas com o exemplo do Zoom.</span></li>
-      <li><span class="check"></span><span>Sei as vias: conector, pasta, skill, Chrome e rotina.</span></li>
+      <li><span class="check"></span><span>Sei que o Claude alcança cada gaveta por um caminho, e que vou montar um por vez.</span></li>
       <li><span class="check"></span><span>Pensei na primeira gaveta que quero conectar.</span></li>
     </ul>
   </div>
 </article>
 
-<article id="m01" class="module" data-aula="1" data-title="O que instalar">
+<article id="m26" class="module" data-aula="1" data-title="Instalar o Claude">
   <div class="module__eyebrow">Parte 1 · Módulo 02</div>
-  <h1 class="module__title">O que instalar <span class="accent">e o que não precisa.</span></h1>
+  <h1 class="module__title">Instalar o Claude: <span class="accent">passo a passo.</span></h1>
   <span class="module__tag">Setup</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Você só precisa do app do Claude, de um plano pago e da extensão do Chrome.</p></div>
-  <p class="lead">Quase todo mundo trava antes de começar porque acha que precisa virar programador. Não precisa. Para usar o Claude no dia a dia, você precisa de um app, um plano e uma extensão.</p>
-
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>O quê</th><th>Precisa?</th><th>Para quê</th></tr></thead>
-    <tbody>
-      <tr><td>App Claude (desktop)</td><td><span class="pill pill--yes">Obrigatório</span></td><td>O app tem três abas. <strong>Chat</strong> é conversa, sem acesso às suas pastas. <strong>Cowork</strong> é outro jeito de trabalhar com arquivos; nesta aula, só para o Dispatch. <strong>Code</strong> trabalha dentro das pastas do seu computador: <strong>nesta aula, a gente usa a aba Code em tudo</strong>. Baixe em <code>claude.ai/download</code> (Mac ou Windows).</td></tr>
-      <tr><td>Plano pago (Pro ou Max)</td><td><span class="pill pill--yes">Obrigatório</span></td><td>A aba Code e a extensão do Chrome pedem plano pago. Quem vai usar muito, todos os dias, sente diferença no Max.</td></tr>
-      <tr><td>Claude in Chrome</td><td><span class="pill pill--yes">Obrigatório nesta aula</span></td><td>Extensão da Chrome Web Store. Deixa o Claude clicar e preencher coisas no navegador. Funciona só no Google Chrome.</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="callout callout--good">
-    <div class="callout__label">◆ Atalho</div>
-    <p>Se travar em qualquer instalação, abra o <strong>claude.ai</strong> no navegador e cole o erro. Peça: <em>"me explica o que significa e faz por mim o que der para fazer daqui"</em>.</p>
-  </div>
-
-  <div class="callout callout--warn">
-    <div class="callout__label">◆ Avançado (opcional): terminal e GitHub</div>
-    <p>Existem formas mais avançadas de usar o Claude. Uma é pelo <strong>terminal</strong>, uma parte do computador onde você digita comandos. Outra é uma configuração extra com o <strong>GitHub</strong>, um serviço que guarda cópias das suas pastas com o histórico de cada mudança.</p>
-    <p>A gente vai entrar nisso aqui? Não. Quem quiser aprender, procura um curso mais avançado. Aqui a gente está no modo IA for Dummies: tudo pelo app.</p>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>App do Claude, plano pago e extensão do Chrome. O resto o Claude instala quando precisar.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">4</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Instalei o app do Claude e entrei na minha conta.</span></li>
-      <li><span class="check"></span><span>Sei que a aba <strong>Code</strong> é a que mexe nas pastas do computador.</span></li>
-      <li><span class="check"></span><span>Instalei a extensão Claude in Chrome.</span></li>
-      <li><span class="check"></span><span>Sei que vou fazer tudo pelo app, sem terminal.</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m26" class="module" data-aula="1" data-title="Instalar passo a passo">
-  <div class="module__eyebrow">Parte 1 · Módulo 03</div>
-  <h1 class="module__title">Instalar, assinar e ligar o Chrome: <span class="accent">passo a passo.</span></h1>
-  <span class="module__tag">Setup</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Três tarefas, na ordem: baixar o app, assinar o plano Pro e colocar a extensão no Chrome.</p></div>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>App no computador, plano Pro e extensão no Chrome, nessa ordem. É tudo o que você precisa instalar.</p></div>
   <p class="lead">Faça com calma, uma tarefa de cada vez. Nos prints, o círculo dourado mostra onde clicar. As telas podem mudar um pouco com o tempo, mas os botões ficam no mesmo lugar.</p>
+  <div class="callout">
+    <div class="callout__label">◆ Escolha uma IA e fique com ela</div>
+    <p>Quem pula entre várias IAs espalha o próprio contexto e precisa reexplicar tudo em cada uma. Nesta aula, a escolhida é o Claude.</p>
+  </div>
+  <div class="callout">
+    <div class="callout__label">◆ As três abas do app</div>
+    <p>O app do Claude tem três abas. <strong>Chat</strong> conversa com você, mas não mexe nas suas pastas. <strong>Code</strong> pode receber as chaves das suas gavetas: é nela que esta aula acontece. <strong>Cowork</strong> é outro jeito de trabalhar com arquivos; aqui, só vamos usá-lo para o Dispatch, na Parte 2.</p>
+  </div>
 
   <h2>1. Baixar o app do Claude no computador</h2>
   <ol class="steps-big">
@@ -511,6 +463,27 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     <p>Ao clicar no ícone do Claude, abre um painel do lado direito do Chrome com uma caixa para escrever.</p>
   </div>
 
+
+  <div class="callout callout--alert">
+    <div class="callout__label">◆ Cuidado com o Chrome</div>
+    <p>A extensão age dentro do seu navegador, onde você já está logado em tudo. Banco, gov.br e qualquer coisa com senha ou pagamento: faça você mesmo, ou use outro navegador sem a extensão.</p>
+  </div>
+  <div class="callout">
+    <div class="callout__label">◆ Vindo do ChatGPT?</div>
+    <p>Peça ao ChatGPT: <em>"me escreve um resumo de tudo o que você sabe sobre mim e o meu trabalho"</em>. Guarde esse texto: ele vira o seu CLAUDE.md no módulo da pasta. E se você gosta das imagens do GPT, dá para pedir ao Claude in Chrome que abra o ChatGPT e gere a imagem por você.</p>
+  </div>
+
+
+  <div class="callout callout--good">
+    <div class="callout__label">◆ Atalho</div>
+    <p>Se travar em qualquer instalação, abra o <strong>claude.ai</strong> no navegador e cole o erro. Peça: <em>"me explica o que significa e faz por mim o que der para fazer daqui"</em>.</p>
+  </div>
+
+  <div class="callout callout--warn">
+    <div class="callout__label">◆ Avançado (opcional): terminal e GitHub</div>
+    <p>Existem formas mais avançadas de usar o Claude. Uma é pelo <strong>terminal</strong>, uma parte do computador onde você digita comandos. Outra é uma configuração extra com o <strong>GitHub</strong>, um serviço que guarda cópias das suas pastas com o histórico de cada mudança.</p>
+    <p>A gente vai entrar nisso aqui? Não. Quem quiser aprender, procura um curso mais avançado. Aqui a gente está no modo IA for Dummies: tudo pelo app.</p>
+  </div>
   <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>App baixado, plano Pro assinado e extensão no Chrome. Com isso, tudo o que vem depois funciona.</p></div>
   <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
@@ -518,16 +491,22 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
       <li><span class="check"></span><span>Baixei e abri o app do Claude, e entrei na minha conta.</span></li>
       <li><span class="check"></span><span>Assinei o plano Pro.</span></li>
       <li><span class="check"></span><span>Coloquei a extensão no Chrome e fixei o ícone.</span></li>
+      <li><span class="check"></span><span>Sei que a aula acontece na aba Code.</span></li>
     </ul>
   </div>
 </article>
 
-<article id="m02" class="module" data-aula="1" data-title="A pasta de trabalho">
-  <div class="module__eyebrow">Parte 1 · Módulo 04</div>
+<article id="m02" class="module" data-aula="1" data-title="A pasta e as 3 chaves">
+  <div class="module__eyebrow">Parte 1 · Módulo 03</div>
   <h1 class="module__title">Uma pasta para o Claude <span class="accent">morar.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Primeiro você cria a pasta no computador. Depois abre essa pasta no Claude e ele monta o resto.</p></div>
   <p class="lead">O Claude trabalha melhor quando sabe onde as coisas ficam. Em vez de abrir conversa solta toda vez, crie uma pasta principal e trabalhe sempre a partir dela.</p>
+  <p>A pasta fica no <strong>seu computador</strong>, em Documentos, e não dentro do Claude. Ela é a primeira gaveta que você entrega a ele.</p>
+  <div class="callout">
+    <div class="callout__label">◆ Progresso e ordem</div>
+    <p>Ninguém começa com tudo arrumado. Crie a pasta, comece a usar e deixe o Claude organizar no caminho: primeiro o progresso, depois a ordem.</p>
+  </div>
 
   <h2>Passo 1: criar a pasta no computador (você mesmo)</h2>
   <p>Para trabalhar com arquivos, o Claude precisa que você escolha uma pasta logo ao abrir a conversa. Então a pasta tem que existir antes. Crie pelo próprio computador:</p>
@@ -561,8 +540,22 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     <div class="kv__row"><div class="kv__key">Uma pasta por projeto</div><div class="kv__val">Cada projeto tem o próprio contexto. Assim o Claude não mistura o lançamento A com o B.</div></div>
   </div>
 
-  <p class="prompt-hint">Como usar os quadros escuros: clique em <strong>Copiar</strong>, cole na conversa do Claude e troque o que estiver <mark class="ph" style="background:#F2C94C;color:#1D2030;border-radius:4px;padding:0 4px">[em amarelo]</mark> pelo seu caso.</p>
+  <p class="prompt-hint">Como usar os quadros escuros: clique em <strong>Copiar</strong>, cole na conversa do Claude e troque o que estiver <mark class="ph" style="background:#E9C9A0;color:#1B1712;border-radius:4px;padding:0 4px">[em amarelo]</mark> pelo seu caso.</p>
   <div class="prompt"><div class="prompt__head"><span>Prompt · montar a pasta</span><button class="prompt__copy">Copiar</button></div><pre>Dentro desta pasta, cria as subpastas cerebro, conhecimento, projetos e entrada. Depois me faz 8 perguntas curtas sobre quem eu sou, meu trabalho e como gosto de receber respostas, e com as minhas respostas escreve o CLAUDE.md da pasta principal.</pre></div>
+
+  <h2>Quanto acesso dar: as 3 chaves</h2>
+  <p>Abrir a pasta no app é como entregar uma chave ao Claude. Existem três chaves, e nesta aula a gente usa só a primeira.</p>
+  <figure class="fig"><img src="img/chaves.jpg" alt="Três chaves: uma abre uma gaveta, outra abre uma casa, a terceira fica acima de uma cadeira em frente ao computador." loading="lazy" width="1400" height="940"><figcaption>A gaveta (uma pasta), a casa (o computador todo) e a cadeira (a sua tela).</figcaption></figure>
+  <div class="kv">
+    <div class="kv__row"><div class="kv__key">1 · A pasta</div><div class="kv__val"><strong>Uma pasta.</strong> Você escolhe a pasta ao abrir a conversa e o Claude trabalha nela. Para ler ou mexer em qualquer coisa fora dela, ele pede a sua permissão, e você pode negar. É o padrão para o dia a dia: um projeto, uma pasta.</div></div>
+    <div class="kv__row"><div class="kv__key">2 · A casa</div><div class="kv__val"><strong>O computador todo.</strong> É possível abrir o Claude na sua pasta de usuário (a que tem o seu nome). Aí ele enxerga Downloads, Área de Trabalho, Documentos, todos os arquivos do seu computador. <strong>Dá para fazer, mas não é o ideal</strong>, e nesta aula a gente não faz.</div></div>
+    <div class="kv__row"><div class="kv__key">3 · A cadeira</div><div class="kv__val"><strong>A sua tela.</strong> O Claude vê a tela e mexe o mouse e o teclado, abrindo programas como se fosse você. Esse recurso ainda está em teste e vem desligado. Para ligar, é preciso ativar nas configurações do app (na parte de recursos em teste) e, no Mac, dar ao Claude as permissões de <strong>Acessibilidade</strong> e <strong>Gravação de Tela</strong> nas configurações do sistema. Também é um acesso amplo: ele vê tudo o que estiver aberto na tela. Nesta aula não vamos ligar. O Claude in Chrome é a versão mais segura disso, só dentro do navegador, e essa a gente usa. Serve para tarefas em programas e sites que não têm outro jeito de conectar.</div></div>
+  </div>
+
+  <div class="callout callout--warn">
+    <div class="callout__label">◆ Atenção: a chave da casa é sensível</div>
+    <p>Dar a chave da casa significa dar ao Claude acesso a <strong>todos os arquivos do seu computador</strong>: documentos pessoais, exames, contratos, fotos, aquele arquivo com senhas anotadas. Não faça isso a menos que você tenha certeza do que está liberando. No dia a dia, use sempre uma pasta só.</p>
+  </div>
 
   <div class="callout callout--alert">
     <div class="callout__label">◆ Nunca</div>
@@ -576,6 +569,52 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
       <li><span class="check"></span><span>Criei a pasta "Claude" em Documentos e abri essa pasta no app.</span></li>
       <li><span class="check"></span><span>Tenho um CLAUDE.md com quem eu sou e como gosto de trabalhar.</span></li>
       <li><span class="check"></span><span>Entendi por que cada projeto tem a própria pasta.</span></li>
+      <li><span class="check"></span><span>Sei que a pasta é a chave que eu dou, e que o computador todo é sensível.</span></li>
+    </ul>
+  </div>
+</article>
+
+<article id="m10" class="module" data-aula="1" data-title="Conectores">
+  <div class="module__eyebrow">Parte 1 · Módulo 04</div>
+  <h1 class="module__title">Conectores: <span class="accent">a segunda gaveta.</span></h1>
+  <span class="module__tag">Setup</span>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Conector é a ponte entre o Claude e um app como o Gmail. Ligar um leva uns dez segundos.</p></div>
+  <p class="lead">A pasta abre os arquivos do computador. Os conectores abrem os apps que você já usa: e-mail, agenda, Drive, reuniões. Ligar um leva uns dez segundos: clicar, fazer login, voltar. Há poucos anos, isso era um projeto de meses.</p>
+  <p>Você vai ouvir o nome técnico <strong>MCP</strong>. É a mesma coisa: "instala o MCP do Zoom" quer dizer "liga o conector do Zoom".</p>
+
+
+  <div class="callout">
+    <div class="callout__label">◆ Como ligar</div>
+    <p>No app, abra a área de <strong>conectores</strong> (fica junto de plugins e skills; se não achar, procure "Conectores" nas configurações), escolha o app, clique em conectar e faça login. Comece por Gmail, Google Agenda e Google Drive. Notion, ClickUp, Zoom, Fathom e Higgsfield têm conector no Claude (na área de conectores do app, junto de plugins e skills). Se o Fathom não aparecer na sua lista, configure o Fathom para salvar os resumos numa pasta do Drive e o Claude lê de lá.</p>
+  </div>
+
+  <h2>Conectores que valem a pena</h2>
+  <p>Cada conector abre uma gaveta. Alguns que fazem diferença no dia a dia de quem é médico e pesquisador:</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Conector</th><th>Gaveta que abre</th><th>Exemplo de pedido</th></tr></thead>
+    <tbody>
+      <tr><td>PubMed</td><td>Os artigos científicos da base PubMed.</td><td>"Busca os ensaios clínicos dos últimos 5 anos sobre [tema] e me faz uma tabela com autor, ano e resultado principal."</td></tr>
+      <tr><td>Gmail</td><td>Seus e-mails.</td><td>"Quais e-mails desta semana precisam de resposta minha?"</td></tr>
+      <tr><td>Google Agenda</td><td>Seus compromissos.</td><td>"O que eu tenho amanhã? Tem algum buraco de 1 hora?"</td></tr>
+      <tr><td>Google Drive</td><td>Seus documentos e planilhas.</td><td>"Acha o contrato que assinei em março."</td></tr>
+      <tr><td>Zoom</td><td>Suas reuniões online.</td><td>"Marca um Zoom com a Júlia na terça às 15h."</td></tr>
+      <tr><td>Fathom</td><td>As gravações e transcrições das suas reuniões.</td><td>"O que eu prometi na reunião de ontem?"</td></tr>
+      <tr><td>ClickUp ou Notion</td><td>Suas tarefas e anotações.</td><td>"Cria a tarefa de mandar o artigo até sexta."</td></tr>
+      <tr><td>Canva</td><td>Suas artes e apresentações.</td><td>"Faz uma arte de convite para a aula de quinta."</td></tr>
+      <tr><td>Higgsfield</td><td>Criação de imagens e vídeos.</td><td>"Cria uma ilustração para a capa da aula."</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>A lista cresce toda semana. Para ver todos, abra a área de conectores do app e navegue pelo catálogo. Ou pergunte ao Claude: <em>"existe conector para [app que eu uso]?"</em>.</p>
+
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Cada conector ligado é uma gaveta que o Claude abre sem você levantar da cadeira. Comece pelo Gmail e pela Agenda.</p></div>
+  <div class="checkpoints">
+    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
+    <ul class="checkpoints__list">
+      <li><span class="check"></span><span>Liguei o conector do Gmail.</span></li>
+      <li><span class="check"></span><span>Liguei o conector da Agenda ou do Drive.</span></li>
+      <li><span class="check"></span><span>Sei que MCP é o nome técnico de conector.</span></li>
     </ul>
   </div>
 </article>
@@ -584,21 +623,21 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
   <div class="module__eyebrow">Parte 1 · Módulo 05</div>
   <h1 class="module__title">Dicionário <span class="accent">de bolso.</span></h1>
   <span class="module__tag">Setup</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Dez palavras que vão aparecer a aula inteira, explicadas sem complicação.</p></div>
-  <p class="lead">Estas palavras aparecem na aula toda. Não precisa decorar: volte aqui sempre que travar em uma delas.</p>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>As palavras novas da aula, cada uma em uma linha, com o módulo onde ela é explicada.</p></div>
+  <p class="lead">Não precisa decorar. Volte aqui sempre que travar numa palavra.</p>
   <figure class="fig"><img src="img/dicionario.jpg" alt="Um pequeno dicionário aberto, cercado por ícones: uma tomada, um cartão de receita, um despertador, uma escrivaninha e um balão de conversa." loading="lazy" width="1400" height="940"><figcaption>Conector é a ponte, skill é a receita, rotina é o despertador, janela de contexto é a mesa.</figcaption></figure>
 
   <div class="kv">
-    <div class="kv__row"><div class="kv__key">Prompt</div><div class="kv__val">O pedido que você escreve (ou fala) para o Claude. Igual a um bilhete para um assistente.</div></div>
-    <div class="kv__row"><div class="kv__key">Conector</div><div class="kv__val">Uma ponte entre o Claude e outro app, como o Gmail ou o Google Drive. Com ela, o Claude lê e organiza as coisas lá dentro.</div></div>
-    <div class="kv__row"><div class="kv__key">MCP</div><div class="kv__val">O nome técnico dos conectores. É o "padrão de tomada" que permite ligar o Claude a outros apps. Quando alguém falar "instala o MCP do Zoom", quer dizer "liga o conector do Zoom".</div></div>
-    <div class="kv__row"><div class="kv__key">Skill</div><div class="kv__val">Uma receita salva. Ensina o Claude a fazer uma tarefa do seu jeito, sempre igual, sem você explicar de novo.</div></div>
-    <div class="kv__row"><div class="kv__key">Rotina</div><div class="kv__val">Uma tarefa com hora marcada. O Claude faz sozinho, todo dia ou toda semana, como um despertador que trabalha.</div></div>
-    <div class="kv__row"><div class="kv__key">Janela de contexto</div><div class="kv__val">A mesa de trabalho do Claude: tudo o que ele está enxergando naquela conversa. Quando a mesa lota, ele fica mais lento e esquece o começo. A Parte 2 tem um módulo só sobre isso.</div></div>
-    <div class="kv__row"><div class="kv__key">Token</div><div class="kv__val">Um pedacinho de texto. É a unidade que mede quanto o Claude leu e quanto do seu plano você gastou.</div></div>
-    <div class="kv__row"><div class="kv__key">CLAUDE.md</div><div class="kv__val">Um bilhete fixo dentro da sua pasta, dizendo ao Claude quem você é e como gosta de trabalhar. Ele lê toda vez.</div></div>
-    <div class="kv__row"><div class="kv__key">Fork</div><div class="kv__val">Uma cópia da conversa, para seguir por outro caminho sem estragar a original.</div></div>
-    <div class="kv__row"><div class="kv__key">Dispatch</div><div class="kv__val">Mandar uma tarefa pelo celular para o Claude fazer no seu computador.</div></div>
+    <div class="kv__row"><div class="kv__key">Prompt</div><div class="kv__val">O pedido que você escreve ou fala para o Claude. Os quadros escuros desta página são prompts prontos.</div></div>
+    <div class="kv__row"><div class="kv__key">CLAUDE.md</div><div class="kv__val">O bilhete fixo na sua pasta dizendo quem você é. Parte 1, módulo 03.</div></div>
+    <div class="kv__row"><div class="kv__key">Conector</div><div class="kv__val">A ponte entre o Claude e um app. Parte 1, módulo 04.</div></div>
+    <div class="kv__row"><div class="kv__key">MCP</div><div class="kv__val">O nome técnico do conector.</div></div>
+    <div class="kv__row"><div class="kv__key">Janela de contexto</div><div class="kv__val">A mesa de trabalho do Claude. Parte 1, módulo 06.</div></div>
+    <div class="kv__row"><div class="kv__key">Token</div><div class="kv__val">A moedinha que ele gasta para ler. Parte 1, módulo 06.</div></div>
+    <div class="kv__row"><div class="kv__key">Fork</div><div class="kv__val">Uma cópia da conversa, para seguir por outro caminho. Parte 1, módulo 06.</div></div>
+    <div class="kv__row"><div class="kv__key">Skill</div><div class="kv__val">Uma receita salva, que funciona em qualquer conversa. Parte 2, módulo 05.</div></div>
+    <div class="kv__row"><div class="kv__key">Rotina</div><div class="kv__val">Uma skill com hora marcada. No app: tarefa agendada. Parte 2, módulo 05.</div></div>
+    <div class="kv__row"><div class="kv__key">Dispatch</div><div class="kv__val">Mandar tarefa pelo celular. Parte 2, módulo 07.</div></div>
   </div>
 
   <div class="callout callout--good">
@@ -616,8 +655,75 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
   </div>
 </article>
 
-<article id="m24" class="module" data-aula="1" data-title="Conhecendo o Claude">
+<article id="m06" class="module" data-aula="1" data-title="Janela de contexto: a mesa">
   <div class="module__eyebrow">Parte 1 · Módulo 06</div>
+  <h1 class="module__title">Janela de contexto: <span class="accent">a mesa do Claude.</span></h1>
+  <span class="module__tag">Conceito</span>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>O Claude relê a conversa inteira a cada mensagem. Quanto mais limpa a conversa, melhor ele trabalha.</p></div>
+  <p class="lead">Um conceito que explica quase tudo o que vem depois. A janela de contexto é a mesa onde o Claude trabalha: tudo o que está em cima dela, ele enxerga. O que não cabe, cai.</p>
+  <figure class="fig"><img src="img/mesa.jpg" alt="Um robozinho aflito numa mesa lotada de papéis, ao lado do mesmo robô sorrindo numa mesa com só três folhas." loading="lazy" width="1400" height="940"><figcaption>Mesa lotada, Claude perdido. Mesa limpa, Claude esperto.</figcaption></figure>
+
+  <h2>O que ocupa a mesa</h2>
+  <ul>
+    <li>Cada mensagem sua e cada resposta dele, desde o começo da conversa.</li>
+    <li>Cada arquivo que ele abriu, cada e-mail que ele leu.</li>
+    <li>As skills que ele carregou e o seu CLAUDE.md.</li>
+  </ul>
+  <p><strong>Token</strong> é a moedinha que o Claude gasta para ler: cada pedacinho de texto custa uma. Como ele relê a mesa inteira a cada mensagem nova, conversa longa gasta moedinha com o que já foi lido. Numa conversa de três horas, um simples "ok, muda a cor do botão" custa a leitura das três horas.</p>
+
+  <h2>Por que isso importa</h2>
+  <div class="kv">
+    <div class="kv__row"><div class="kv__key">Mesa lotada</div><div class="kv__val">Ele fica mais lento, gasta mais do seu plano e começa a esquecer coisas que você disse no começo.</div></div>
+    <div class="kv__row"><div class="kv__key">Mesa limpa</div><div class="kv__val">Só o que importa para a tarefa. Respostas melhores e o plano dura a semana inteira.</div></div>
+  </div>
+
+  <h2>Quatro hábitos para manter a mesa limpa</h2>
+  <div class="kv">
+    <div class="kv__row"><div class="kv__key">/compact</div><div class="kv__val">Digite <code>/compact</code> e o Claude resume a conversa e continua dali. Use quando a tarefa ainda é a mesma, mas a conversa ficou longa.</div></div>
+    <div class="kv__row"><div class="kv__key">Conversa nova</div><div class="kv__val">Mudou de assunto, abre outra conversa. Começa leve.</div></div>
+    <div class="kv__row"><div class="kv__key">CLAUDE.md</div><div class="kv__val">O que você repete em toda conversa vai para o CLAUDE.md, e você para de gastar mesa explicando.</div></div>
+    <div class="kv__row"><div class="kv__key">Fork</div><div class="kv__val">Uma cópia da conversa até aquele ponto, que segue por outro caminho. Veja abaixo.</div></div>
+  </div>
+
+  <h2>Fork: duas tarefas com a mesma mesa</h2>
+  <p>Você passou uma hora explicando um projeto e a conversa ficou ótima. Agora quer fazer duas coisas com esse contexto: o e-mail e a página. Se fizer as duas na mesma conversa, uma suja a mesa da outra. Se abrir conversa nova, perde o contexto. O fork resolve: ele copia a conversa e você leva cada tarefa num galho.</p>
+  <ol>
+    <li>Na conversa boa, procure a opção <strong>Fork</strong> no menu da conversa, na barra lateral.</li>
+    <li>O app cria uma conversa nova que já sabe tudo o que a original sabia.</li>
+    <li>Faça o e-mail num galho e a página no outro. A conversa original fica intacta.</li>
+    <li><strong>Atenção:</strong> o fork copia a conversa, não os arquivos. Se os dois galhos editarem o mesmo arquivo, um passa por cima do outro.</li>
+  </ol>
+  <div class="kv">
+    <div class="kv__row"><div class="kv__key">Use para</div><div class="kv__val">Testar dois caminhos (versão A e versão B), fazer duas entregas do mesmo contexto ou arriscar uma mudança sem estragar o que já está bom.</div></div>
+    <div class="kv__row"><div class="kv__key">Não use para</div><div class="kv__val">Assunto novo. Aí é conversa nova, mesa vazia.</div></div>
+  </div>
+
+
+  <h2>O que mais gasta</h2>
+  <ul>
+    <li>Usar o <strong>Chrome</strong> para ler e-mail quando existe o conector do Gmail. O Chrome tira foto da tela a cada passo, e isso pesa.</li>
+    <li>Pedir para ler <strong>300 arquivos inteiros</strong> quando um índice resolveria.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout__label">◆ Guarde esta ideia</div>
+    <p>Tudo o que vem a seguir (segundo cérebro, gaveta organizada, skills) existe para colocar menos coisa e coisa mais certa em cima da mesa.</p>
+  </div>
+
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>O Claude relê a mesa inteira a cada mensagem. Mesa limpa, Claude esperto. Mesa lotada, Claude caro e esquecido.</p></div>
+  <div class="checkpoints">
+    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
+    <ul class="checkpoints__list">
+      <li><span class="check"></span><span>Sei explicar o que é a janela de contexto com a imagem da mesa.</span></li>
+      <li><span class="check"></span><span>Sei o que é um token.</span></li>
+      <li><span class="check"></span><span>Sei quando usar /compact e quando abrir conversa nova.</span></li>
+      <li><span class="check"></span><span>Sei fazer um fork para levar o mesmo contexto para duas tarefas.</span></li>
+    </ul>
+  </div>
+</article>
+
+<article id="m24" class="module" data-aula="1" data-title="Modelos, modos e limite">
+  <div class="module__eyebrow">Parte 1 · Módulo 07</div>
   <h1 class="module__title">Conhecendo o Claude: <span class="accent">modelos, modos e limite.</span></h1>
   <span class="module__tag">Setup</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Você escolhe qual cérebro usar, quanta liberdade dar a ele e acompanha quanto do plano já gastou.</p></div>
@@ -630,7 +736,7 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     <thead><tr><th>Modelo</th><th>Como pensar nele</th><th>Use para</th></tr></thead>
     <tbody>
       <tr><td>Fable (o mais potente)</td><td>O gênio da equipe. É o modelo mais inteligente e o que mais gasta do plano.</td><td>O que é muito difícil ou muito importante: um plano complexo, uma análise que os outros erraram, revisar um trabalho grande.</td></tr>
-      <tr><td>Opus (grande)</td><td>O especialista sênior. Pensa fundo e gasta bastante.</td><td>Estratégia, texto importante, tarefa longa com muitas etapas.</td></tr>
+      <tr><td>Opus (grande)</td><td>O especialista sênior. Para o que pede raciocínio.</td><td>Estratégia, texto importante, tarefa longa com muitas etapas.</td></tr>
       <tr><td>Sonnet (médio)</td><td>O profissional do dia a dia. Rápido e muito bom.</td><td>A maior parte das tarefas: e-mail, organizar, resumir.</td></tr>
       <tr><td>Haiku (pequeno)</td><td>O estagiário ágil. Muito rápido e econômico.</td><td>Tarefas simples e repetidas: renomear, classificar, separar.</td></tr>
     </tbody>
@@ -638,77 +744,44 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
   </div>
   <p>O seletor de modelo fica na própria conversa. Na dúvida, pergunte: <em>"qual modelo você recomenda para esta tarefa?"</em>.</p>
 
+  <h3>O Fable como conselheiro</h3>
+  <p>O Fable é ótimo para decidir o que fazer e caro para executar. Dá para deixar o plano com ele e a execução com um modelo mais leve: na conversa, digite <code>/advisor</code> e escolha <strong>fable</strong>. Você continua trabalhando no modelo que escolheu, e o Fable entra para revisar o plano e os pontos difíceis.</p>
+  <h3>O nível de esforço</h3>
+  <p>Além do modelo, dá para escolher quanto ele pensa antes de responder. Mais esforço ajuda em tarefa difícil e gasta mais. Para o dia a dia, o padrão basta. Se não achar onde muda, pergunte ao Claude.</p>
+
   <h2>2. Os modos: quanta liberdade ele tem</h2>
-  <p>O modo decide se o Claude pede licença antes de agir. Os nomes podem variar um pouco no app, mas são estes quatro:</p>
+  <p>O modo decide se o Claude pede licença antes de agir. Os nomes podem variar um pouco no app:</p>
   <div class="kv">
-    <div class="kv__row"><div class="kv__key">Manual</div><div class="kv__val">Ele pergunta antes de cada ação: criar, mover, enviar. Você aprova uma por uma. <strong>Comece por aqui.</strong></div></div>
+    <div class="kv__row"><div class="kv__key">Manual</div><div class="kv__val">Ele pede licença para cada coisa: abrir uma pasta, ler um arquivo, criar, mover, enviar. Você vê tudo, mas cansa.</div></div>
     <div class="kv__row"><div class="kv__key">Aceitar edições</div><div class="kv__val">Ele cria, edita, move e apaga arquivos da pasta sem perguntar. Use só quando já confia na tarefa.</div></div>
     <div class="kv__row"><div class="kv__key">Planejar</div><div class="kv__val">Ele só pensa e te mostra o plano. Não mexe em nada até você aprovar. Ótimo antes de uma tarefa grande.</div></div>
-    <div class="kv__row"><div class="kv__key">Automático</div><div class="kv__val">Ele trabalha sozinho do começo ao fim e só para no que for arriscado. Use quando já confia na tarefa.</div></div>
+    <div class="kv__row"><div class="kv__key">Automático</div><div class="kv__val">Ele trabalha sozinho e só pergunta o que é sensível, como fazer login ou enviar algo. É o modo que a Ana usa no dia a dia.</div></div>
+    <div class="kv__row"><div class="kv__key">Ignorar permissões</div><div class="kv__val">Ele não pergunta nada. Não use.</div></div>
   </div>
   <div class="callout callout--good">
     <div class="callout__label">◆ Regra de bolso</div>
-    <p>Tarefa nova: <strong>Planejar</strong> ou <strong>Manual</strong>. Tarefa que você já fez dez vezes e conferiu: <strong>Automático</strong>.</p>
+    <p>Nas primeiras vezes, use <strong>Manual</strong> ou <strong>Planejar</strong> para ver o que ele faz. Pegou confiança: <strong>Automático</strong>.</p>
   </div>
 
   <h2>3. O limite de uso: o seu plano é um tanque</h2>
-  <p>Todo plano tem um limite de uso. Pense num tanque de combustível que enche de novo sozinho: ele recarrega a cada poucas horas, e também existe um limite da semana.</p>
+  <p>Todo plano tem um limite de uso. Pense num tanque de combustível que enche de novo sozinho.</p>
   <ul>
     <li><strong>Onde ver:</strong> nas configurações do app, na parte de uso, aparece quanto você já gastou e quando recarrega. Se não achar, pergunte ao Claude onde fica.</li>
-    <li><strong>O que gasta mais:</strong> modelo grande, conversa muito longa e tarefas no Chrome.</li>
+    <li><strong>O que gasta mais:</strong> modelo grande. Conversa longa e Chrome você já viu no módulo anterior.</li>
     <li><strong>Acabou o tanque?</strong> Espere recarregar ou troque para um modelo menor para tarefas simples.</li>
   </ul>
   <div class="callout">
-    <div class="callout__label">◆ Isso volta na Parte 2</div>
-    <p>No módulo da janela de contexto e no de "gastar menos inteligência", você aprende a fazer o tanque durar a semana inteira.</p>
+    <div class="callout__label">◆ Estoura o limite?</div>
+    <p>O uso recarrega a cada 5 horas e também tem um limite da semana. Conversa curta e <code>/compact</code> (módulo anterior) fazem render mais. Se mesmo assim você estoura sempre, o próximo plano (Max, depois Ultra) dá mais uso. Nada desta aula exige o Ultra.</p>
   </div>
 
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Modelo é o tamanho do cérebro, modo é quanta liberdade ele tem, limite é o tanque. Comece no manual, com o modelo médio, e guarde o Fable para o que é difícil de verdade.</p></div>
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Modelo é o tamanho do cérebro, modo é quanta liberdade ele tem, limite é o tanque. Modelo médio no dia a dia, Fable para planejar, Manual nas primeiras vezes.</p></div>
   <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
     <ul class="checkpoints__list">
       <li><span class="check"></span><span>Sei quando usar Fable, Opus, Sonnet e Haiku.</span></li>
-      <li><span class="check"></span><span>Deixei o modo em Manual para começar.</span></li>
+      <li><span class="check"></span><span>Sei a diferença entre Manual e Automático.</span></li>
       <li><span class="check"></span><span>Sei onde ver quanto do plano já gastei.</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m03" class="module" data-aula="1" data-title="As 3 chaves">
-  <div class="module__eyebrow">Parte 1 · Módulo 07</div>
-  <h1 class="module__title">Quanto acesso dar: <span class="accent">as 3 chaves.</span></h1>
-  <span class="module__tag">Setup</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Você escolhe quanto do seu computador o Claude pode ver: uma pasta, tudo ou a tela.</p></div>
-  <p class="lead">Pense no Claude como um assistente que você acabou de contratar. A pergunta é quantas chaves você entrega para ele. São três níveis, e cada um serve para um tipo de tarefa.</p>
-  <figure class="fig"><img src="img/chaves.jpg" alt="Três chaves: uma abre uma gaveta, outra abre uma casa, a terceira fica acima de uma cadeira em frente ao computador." loading="lazy" width="1400" height="940"><figcaption>A gaveta (uma pasta), a casa (o computador todo) e a cadeira (a sua tela).</figcaption></figure>
-
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">1 · A pasta</div><div class="kv__val"><strong>Uma pasta.</strong> Você escolhe a pasta ao abrir a conversa e o Claude trabalha nela. Para ler ou mexer em qualquer coisa fora dela, ele pede a sua permissão, e você pode negar. É o padrão para o dia a dia: um projeto, uma pasta.</div></div>
-    <div class="kv__row"><div class="kv__key">2 · A casa</div><div class="kv__val"><strong>O computador todo.</strong> É possível abrir o Claude na sua pasta de usuário (a que tem o seu nome). Aí ele enxerga Downloads, Área de Trabalho, Documentos, todos os arquivos do seu computador. <strong>Dá para fazer, mas não é o ideal</strong>, e nesta aula a gente não faz.</div></div>
-    <div class="kv__row"><div class="kv__key">3 · A cadeira</div><div class="kv__val"><strong>A sua tela.</strong> O Claude vê a tela e mexe o mouse e o teclado, abrindo programas como se fosse você. Esse recurso ainda está em teste e vem desligado. Para ligar, é preciso ativar nas configurações do app (na parte de recursos em teste) e, no Mac, dar ao Claude as permissões de <strong>Acessibilidade</strong> e <strong>Gravação de Tela</strong> nas configurações do sistema. Também é um acesso amplo: ele vê tudo o que estiver aberto na tela. Nesta aula não vamos ligar. O Claude in Chrome é a versão mais segura disso, só dentro do navegador, e essa a gente usa. Serve para tarefas em programas e sites que não têm outro jeito de conectar.</div></div>
-  </div>
-
-  <div class="callout callout--warn">
-    <div class="callout__label">◆ Atenção: a chave da casa é sensível</div>
-    <p>Dar a chave da casa significa dar ao Claude acesso a <strong>todos os arquivos do seu computador</strong>: documentos pessoais, exames, contratos, fotos, aquele arquivo com senhas anotadas. Não faça isso a menos que você tenha certeza do que está liberando. No dia a dia, use sempre uma pasta só.</p>
-  </div>
-
-  <div class="callout callout--good">
-    <div class="callout__label">◆ O que tranquiliza</div>
-    <ul>
-      <li><strong>Ele pede licença no modo Manual.</strong> Antes de apagar, mover ou enviar alguma coisa, o Claude pergunta, e você pode negar. Nos outros modos, não conte com isso.</li>
-      <li><strong>A chave volta.</strong> Você troca a pasta ou fecha o acesso quando quiser.</li>
-      <li><strong>Regra de bolso:</strong> comece pela gaveta e só suba de nível quando a tarefa pedir.</li>
-    </ul>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Pasta para o dia a dia. A casa inteira é sensível e não é o ideal. A cadeira fica para os programas sem conexão, e nesta aula usamos só a versão do Chrome. Comece sempre pela pasta.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Sei explicar a diferença entre dar uma pasta e dar o computador.</span></li>
-      <li><span class="check"></span><span>Sei que o Chrome e o controle de tela são o nível "cadeira".</span></li>
-      <li><span class="check"></span><span>Vou começar com a gaveta: uma pasta por projeto.</span></li>
     </ul>
   </div>
 </article>
@@ -722,9 +795,9 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 
   <div class="kv">
     <div class="kv__row"><div class="kv__key">1 · Pasta</div><div class="kv__val">Aba Code → escolha sua pasta "Claude" → pergunte <em>"o que tem nesta pasta?"</em>. Ele deve listar as subpastas.</div></div>
-    <div class="kv__row"><div class="kv__key">2 · Conectores</div><div class="kv__val">No app, abra a área de <strong>conectores</strong> (fica junto de plugins e skills; se não achar, procure "Conectores" nas configurações) e conecte <strong>Gmail</strong>, <strong>Google Agenda</strong> e <strong>Google Drive</strong>. Teste: <em>"o que tenho na agenda amanhã?"</em></div></div>
+    <div class="kv__row"><div class="kv__key">2 · Conectores</div><div class="kv__val">Pergunte <em>"o que tenho na agenda amanhã?"</em>. Se ele responder, os conectores estão funcionando.</div></div>
     <div class="kv__row"><div class="kv__key">3 · Chrome</div><div class="kv__val">Abra a extensão, faça login e peça: <em>"abre o site do clima e me diz a previsão de amanhã"</em>.</div></div>
-    <div class="kv__row"><div class="kv__key">4 · Permissões</div><div class="kv__val">Quando o Claude pedir permissão para uma ação, leia antes de aceitar. No começo, deixe no modo <strong>Manual</strong>, que pergunta antes de agir (Módulo 06 desta parte: Conhecendo o Claude).</div></div>
+    <div class="kv__row"><div class="kv__key">4 · Permissões</div><div class="kv__val">Com o modo em Manual, peça <em>"cria um arquivo teste.txt nesta pasta"</em> e veja o pedido de permissão aparecer. Leia antes de aceitar. Em Automático ele cria direto, e também está certo.</div></div>
   </div>
 
   <div class="callout callout--good">
@@ -783,73 +856,14 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
   </div>
 </article>
 
-<article id="m06" class="module" data-aula="2" data-title="Janela de contexto">
+<article id="m07" class="module" data-aula="2" data-title="Conhecimento x segundo cérebro">
   <div class="module__eyebrow">Parte 2 · Módulo 02</div>
-  <h1 class="module__title">Janela de contexto: <span class="accent">a mesa do Claude.</span></h1>
-  <span class="module__tag">Conceito</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>O Claude relê a conversa inteira a cada mensagem. Quanto mais limpa a conversa, melhor ele trabalha.</p></div>
-  <p class="lead">Antes dos pilares, um conceito que explica quase tudo o que vem depois. A janela de contexto é a mesa onde o Claude trabalha: tudo o que está em cima dela, ele enxerga. O que não cabe, cai.</p>
-  <figure class="fig"><img src="img/mesa.jpg" alt="Um robozinho aflito numa mesa lotada de papéis, ao lado do mesmo robô sorrindo numa mesa com só três folhas." loading="lazy" width="1400" height="940"><figcaption>Mesa lotada, Claude perdido. Mesa limpa, Claude esperto.</figcaption></figure>
-
-  <h2>O que ocupa a mesa</h2>
-  <ul>
-    <li>Cada mensagem sua e cada resposta dele, desde o começo da conversa.</li>
-    <li>Cada arquivo que ele abriu, cada e-mail que ele leu.</li>
-    <li>As skills que ele carregou e o seu CLAUDE.md.</li>
-  </ul>
-  <p>A mesa é medida em <strong>tokens</strong>, que são pedacinhos de texto (menores que uma palavra). A cada mensagem nova, o Claude relê a mesa inteira. Numa conversa de três horas, um simples "ok, muda a cor do botão" custa a leitura das três horas.</p>
-
-  <h2>Por que isso importa</h2>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">Mesa lotada</div><div class="kv__val">Ele fica mais lento, gasta mais do seu plano e começa a esquecer coisas que você disse no começo.</div></div>
-    <div class="kv__row"><div class="kv__key">Mesa limpa</div><div class="kv__val">Só o que importa para a tarefa. Respostas melhores e o plano dura a semana inteira.</div></div>
-  </div>
-
-  <h2>Quatro hábitos para manter a mesa limpa</h2>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">/compact</div><div class="kv__val">Digite <code>/compact</code> e o Claude resume a conversa e continua dali. Use quando a tarefa ainda é a mesma, mas a conversa ficou longa.</div></div>
-    <div class="kv__row"><div class="kv__key">Conversa nova</div><div class="kv__val">Mudou de assunto, abre outra conversa. Começa leve.</div></div>
-    <div class="kv__row"><div class="kv__key">CLAUDE.md</div><div class="kv__val">O que você repete em toda conversa vai para o CLAUDE.md, e você para de gastar mesa explicando.</div></div>
-    <div class="kv__row"><div class="kv__key">Fork</div><div class="kv__val">Uma cópia da conversa até aquele ponto, que segue por outro caminho. Veja abaixo.</div></div>
-  </div>
-
-  <h2>Fork: duas tarefas com a mesma mesa</h2>
-  <p>Você passou uma hora explicando um projeto e a conversa ficou ótima. Agora quer fazer duas coisas com esse contexto: o e-mail e a página. Se fizer as duas na mesma conversa, uma suja a mesa da outra. Se abrir conversa nova, perde o contexto. O fork resolve: ele copia a conversa e você leva cada tarefa num galho.</p>
-  <ol>
-    <li>Na conversa boa, procure a opção <strong>Fork</strong> no menu da conversa, na barra lateral.</li>
-    <li>O app cria uma conversa nova que já sabe tudo o que a original sabia.</li>
-    <li>Faça o e-mail num galho e a página no outro. A conversa original fica intacta.</li>
-    <li><strong>Atenção:</strong> o fork copia a conversa, não os arquivos. Se os dois galhos editarem o mesmo arquivo, um passa por cima do outro.</li>
-  </ol>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">Use para</div><div class="kv__val">Testar dois caminhos (versão A e versão B), fazer duas entregas do mesmo contexto ou arriscar uma mudança sem estragar o que já está bom.</div></div>
-    <div class="kv__row"><div class="kv__key">Não use para</div><div class="kv__val">Assunto novo. Aí é conversa nova, mesa vazia.</div></div>
-  </div>
-
-  <div class="callout">
-    <div class="callout__label">◆ Guarde esta ideia</div>
-    <p>Tudo o que vem a seguir (segundo cérebro, gaveta organizada, skills) existe para colocar menos coisa e coisa mais certa em cima da mesa.</p>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>O Claude relê a mesa inteira a cada mensagem. Mesa limpa, Claude esperto. Mesa lotada, Claude caro e esquecido.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Sei explicar o que é a janela de contexto com a imagem da mesa.</span></li>
-      <li><span class="check"></span><span>Sei o que é um token.</span></li>
-      <li><span class="check"></span><span>Sei quando usar /compact e quando abrir conversa nova.</span></li>
-      <li><span class="check"></span><span>Sei fazer um fork para levar o mesmo contexto para duas tarefas.</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m07" class="module" data-aula="2" data-title="Acumulado x segundo cérebro">
-  <div class="module__eyebrow">Parte 2 · Módulo 03</div>
   <h1 class="module__title">Conhecimento acumulado <span class="accent">x segundo cérebro.</span></h1>
   <span class="module__tag">Conhecimento</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Guardar tudo é o começo. O segundo cérebro guarda só a ideia, uma vez, e o Claude entende muito mais rápido.</p></div>
   <p class="lead">Juntar transcrições numa pasta é o primeiro passo, e ele já ajuda. Mas uma pilha de transcrições é conhecimento acumulado. O segundo cérebro é o passo seguinte: a mesma pilha transformada em ideias curtas, uma por nota, sem repetição.</p>
-  <figure class="fig"><img src="img/cerebro.jpg" alt="Uma pilha alta de documentos e gravações de reunião se transforma num cérebro com três partes coloridas, cada uma com poucas fichas organizadas." loading="lazy" width="1400" height="940"><figcaption>A pilha de transcrições vira poucas fichas, cada uma no seu lobo.</figcaption></figure>
+  <p>Quase toda gaveta tem conector. A sua cabeça não tem: é você quem tira o conhecimento de lá e coloca no computador.</p>
+  <figure class="fig"><img src="img/cerebro.jpg" alt="Uma pilha alta de documentos e gravações de reunião se transforma num cérebro com três partes coloridas, cada uma com poucas fichas organizadas." loading="lazy" width="1400" height="940"><figcaption>A pilha de transcrições vira poucas fichas, cada uma na sua pasta de assunto.</figcaption></figure>
 
   <div class="table-wrap">
   <table class="data-table">
@@ -862,6 +876,8 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
     </tbody>
   </table>
   </div>
+
+  <p>Um jeito de separar: a transcrição da aula em que você ensinou algo é conhecimento. O que você considera um bom resultado, dito em poucas linhas, é cérebro.</p>
 
   <h2>Um exemplo: o personal statement</h2>
   <p>Em 20 reuniões de mentoria, você repetiu a mesma coisa: o personal statement (e a carta de recomendação) precisa contar uma história, e não listar conquistas.</p>
@@ -880,18 +896,14 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 <b>Vale também para:</b> carta de recomendação
 <b>Fonte:</b> 20 mentorias, mar a nov/2026</div>
 
+  <p>Se em reuniões diferentes você disse coisas diferentes sobre o mesmo assunto, peça para o Claude apontar onde você se contradisse e perguntar qual vale.</p>
   <div class="callout">
     <div class="callout__label">◆ Uma ideia, uma nota curta</div>
     <p>O segundo cérebro é o seu conhecimento resumido ao mínimo: cada ideia vira o menor texto que ainda carrega o que você pensa. É a base para o Claude escrever, responder e decidir do seu jeito.</p>
   </div>
 
-  <h2>Os lobos do cérebro</h2>
-  <p>Separe o cérebro em <strong>lobos</strong> (como as partes do cérebro de verdade, cada uma cuidando de um assunto), um para cada área da sua vida. Assim o Claude consulta só o lobo que interessa à tarefa.</p>
-  <div class="tree"><b>cerebro/</b>
-├── <b>trabalho/</b>      <i>← decisões, processos, o que funciona nos lançamentos</i>
-├── <b>mentoria/</b>      <i>← o que você ensina e repete para os alunos</i>
-├── <b>pessoal/</b>       <i>← preferências, saúde, viagens, família</i>
-└── <b>indice.md</b>      <i>← uma linha por nota: o que ela diz</i></div>
+  <h2>Os lobos</h2>
+  <p>Separe o cérebro em <strong>lobos</strong>, como as partes do cérebro de verdade: um para o trabalho, um para a mentoria, um para a vida pessoal. Assim o Claude consulta só o lobo que interessa.</p>
 
   <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Transcrição é matéria-prima. Segundo cérebro é a sua premissa, dita uma vez, organizada por lobo. O Claude gasta muito menos para entender o que você quer.</p></div>
   <div class="checkpoints">
@@ -905,13 +917,19 @@ No fim, me mostra uma tabela com as 5 gavetas que mais valem a pena conectar pri
 </article>
 
 <article id="m08" class="module" data-aula="2" data-title="De onde vem o conhecimento">
-  <div class="module__eyebrow">Parte 2 · Módulo 04</div>
+  <div class="module__eyebrow">Parte 2 · Módulo 03</div>
   <h1 class="module__title">De onde vem <span class="accent">o conhecimento.</span></h1>
   <span class="module__tag">Conhecimento</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Seus vídeos, suas reuniões e suas fotos já são o material do seu segundo cérebro.</p></div>
-  <p class="lead">A matéria-prima do cérebro já existe: está nos seus vídeos, nas suas reuniões e nas suas fotos. Três fontes.</p>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Reuniões, a sua voz e o YouTube já são o material do seu segundo cérebro.</p></div>
+  <p class="lead">A matéria-prima do cérebro já existe: nas suas reuniões, na sua voz e nos seus vídeos.</p>
 
-  <h2>Fonte 1: um canal do YouTube</h2>
+  <h2>Fonte 1: as suas reuniões</h2>
+  <p>Quase ninguém tem paciência de escrever o passo a passo do que faz. Mas você já explica tudo isso em reunião: basta gravar. Cada reunião gravada pelo Fathom vira texto. Com o conector do Fathom ligado, o Claude lê as transcrições direto. A atividade 02 da Parte 3 monta uma rotina que faz isso todo dia e alimenta o cérebro sozinha.</p>
+
+    <h2>Fonte 2: a sua voz</h2>
+  <p>O que você fala em dois minutos levaria quinze para digitar. Na caixa de mensagem do Claude, clique no <strong>microfone</strong> e explique como você faz uma tarefa, do começo ao fim. O Claude transforma a fala em nota do cérebro.</p>
+
+<h2>Fonte 3: um canal do YouTube</h2>
   <p>A maioria dos vídeos do YouTube já tem legenda, inclusive as automáticas. O Claude baixa essas legendas e transforma em texto. Você só precisa passar o identificador do canal.</p>
   <div class="ref ref--tip">
     <div class="ref__head"><span class="ref__badge">Onde achar</span><span class="ref__source">ID do canal</span></div>
@@ -931,10 +949,32 @@ Começa pelos 10 vídeos mais recentes e me mostra antes de seguir.</pre>
     <p>O canal do Meta-Analysis Academy virou base assim: 430 vídeos varridos, 360 com legenda pronta. Hoje o Claude escreve textos de venda e responde aluno usando o que já foi ensinado em aula.</p>
   </div>
 
-  <h2>Fonte 2: as suas reuniões</h2>
-  <p>Cada reunião gravada pelo Fathom vira texto. Com o conector do Fathom ligado, o Claude lê as transcrições direto. A primeira atividade da Parte 3 monta uma rotina que faz isso todo dia e alimenta o cérebro sozinha.</p>
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Reuniões, a sua voz e o YouTube já te dão a matéria-prima quase de graça. O trabalho é transformar em texto com índice.</p></div>
+  <div class="checkpoints">
+    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
+    <ul class="checkpoints__list">
+      <li><span class="check"></span><span>Sei achar o ID de um canal e pedir a transcrição.</span></li>
+      <li><span class="check"></span><span>Sei que as reuniões entram pelo Fathom.</span></li>
+      <li><span class="check"></span><span>Testei falar com o Claude pelo microfone.</span></li>
+    </ul>
+  </div>
+</article>
 
-  <h2>Fonte 3: as suas fotos</h2>
+<article id="m09" class="module" data-aula="2" data-title="A gaveta organizada">
+  <div class="module__eyebrow">Parte 2 · Módulo 04</div>
+  <h1 class="module__title">Ache a caneta azul: <span class="accent">a gaveta organizada.</span></h1>
+  <span class="module__tag">Conhecimento</span>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Base arrumada, Claude rápido. Base bagunçada, Claude perdido.</p></div>
+  <p class="lead">O Claude consegue consultar uma base enorme, como o seu Google Drive inteiro. Mas o trabalho que ele tem para achar alguma coisa depende de como a base está arrumada.</p>
+  <figure class="fig"><img src="img/gaveta.jpg" alt="Duas gavetas: uma bagunçada com canetas, clipes e chaves misturados; outra organizada em caixinhas, com a caneta azul em destaque." loading="lazy" width="1400" height="940"><figcaption>Na gaveta organizada, a caneta azul está à vista.</figcaption></figure>
+
+  <div class="ref ref--tip">
+    <div class="ref__head"><span class="ref__badge">A imagem</span><span class="ref__source">A caneta azul</span></div>
+    <p><strong>Gaveta bagunçada:</strong> você pede a caneta azul e o Claude precisa tirar tudo da gaveta, olhar item por item e torcer para achar. Gasta mesa, demora e às vezes volta com a caneta preta.</p>
+    <p><strong>Gaveta organizada:</strong> tem a caixa das canetas, a parte das borrachas, a parte dos clipes. Ele vai direto na caixa das canetas e pega a azul.</p>
+  </div>
+
+<h2>Fotos com ficha</h2>
   <p>Para criar posts, o problema nunca é falta de foto. É achar a foto certa. Jogue as fotos numa pasta do Drive e peça para o Claude olhar cada uma e descrever.</p>
   <div class="ref ref--good">
     <div class="ref__head"><span class="ref__badge">Exemplo real</span><span class="ref__source">Fotos de um evento presencial</span></div>
@@ -948,48 +988,7 @@ Se não souber o nome de alguém, escreve "não identificado". Não invente nome
     <p>O Claude não reconhece rosto. Os nomes vêm de você: da legenda, do nome do arquivo ou de uma lista que você passar.</p>
   </div>
 
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>YouTube, reuniões e fotos já te dão a matéria-prima quase de graça. O trabalho é transformar em texto com índice.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Sei achar o ID de um canal e pedir a transcrição.</span></li>
-      <li><span class="check"></span><span>Sei que as reuniões entram pelo Fathom.</span></li>
-      <li><span class="check"></span><span>Sei indexar uma pasta de fotos para achar a foto certa depois.</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m09" class="module" data-aula="2" data-title="A gaveta organizada">
-  <div class="module__eyebrow">Parte 2 · Módulo 05</div>
-  <h1 class="module__title">Ache a caneta azul: <span class="accent">a gaveta organizada.</span></h1>
-  <span class="module__tag">Conhecimento</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Base arrumada, Claude rápido. Base bagunçada, Claude perdido.</p></div>
-  <p class="lead">O Claude consegue consultar uma base enorme, como o seu Google Drive inteiro. Mas o trabalho que ele tem para achar alguma coisa depende de como a base está arrumada.</p>
-  <figure class="fig"><img src="img/gaveta.jpg" alt="Duas gavetas: uma bagunçada com canetas, clipes e chaves misturados; outra organizada em caixinhas, com a caneta azul em destaque." loading="lazy" width="1400" height="940"><figcaption>Na gaveta organizada, a caneta azul está à vista.</figcaption></figure>
-
-  <div class="ref ref--tip">
-    <div class="ref__head"><span class="ref__badge">A imagem</span><span class="ref__source">A caneta azul</span></div>
-    <p><strong>Gaveta bagunçada:</strong> você pede a caneta azul e o Claude precisa tirar tudo da gaveta, olhar item por item e torcer para achar. Gasta mesa, demora e às vezes volta com a caneta preta.</p>
-    <p><strong>Gaveta organizada:</strong> tem a caixa das canetas, a parte das borrachas, a parte dos clipes. Ele vai direto na caixa das canetas e pega a azul.</p>
-  </div>
-
-  <h2>O que faz uma gaveta organizada</h2>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">Poucas pastas</div><div class="kv__val">No máximo 8 pastas principais, por assunto. Ele decide rápido onde procurar.</div></div>
-    <div class="kv__row"><div class="kv__key">Nomes que explicam</div><div class="kv__val"><code>2026-11-12_contrato-fornecedor_v2.pdf</code> em vez de <code>Sem título (3).pdf</code>. Ele acha pelo nome, sem abrir.</div></div>
-    <div class="kv__row"><div class="kv__key">Um índice</div><div class="kv__val">Uma planilha ou um <code>LEIA-ME</code> em cada pasta principal dizendo o que tem lá. Ele lê o índice primeiro e abre só o que precisa.</div></div>
-    <div class="kv__row"><div class="kv__key">Uma entrada</div><div class="kv__val">Uma pasta "Entrada" para o que ainda não tem lugar. A bagunça fica num lugar só.</div></div>
-  </div>
-
-  <div class="ref ref--good">
-    <div class="ref__head"><span class="ref__badge">Exemplo real</span><span class="ref__source">Provas sociais do Meta-Analysis Academy</span></div>
-    <p>Os depoimentos e resultados dos alunos estavam espalhados. Eles foram arrumados no Drive em gavetas, uma caixa para cada tipo de resultado e, dentro dela, uma pasta por aluno:</p>
-  </div>
-  <div class="tree"><b>PROVAS SOCIAIS MAA/</b>
-├── <b>HACKATHON/</b>                <i>← uma pasta por aluno</i>
-├── <b>RESEARCH FELLOWSHIP/</b>      <i>← pastas numeradas: 01 - Nome, 02 - Nome...</i>
-└── <b>GUIDELINES/</b>               <i>← alunos que publicaram em diretrizes</i></div>
-  <p>Com a gaveta arrumada, o Claude achou cada caneta azul sem esforço: em pouco tempo, ele montou uma página com os resultados dos alunos a partir dessas pastas. Veja: <a href="https://maa-alunos.netlify.app" target="_blank" rel="noopener">maa-alunos.netlify.app</a>.</p>
+    <p>O mesmo vale para recibos e depoimentos: com cada um numa ficha, o Claude acha o do mês, da pessoa ou do assunto que você pedir.</p>
 
   <h2>Indexar antes de arrumar</h2>
   <p>O primeiro passo é dar uma ficha para cada arquivo, sem mexer em nada. A arrumação completa está na Parte 3.</p>
@@ -997,85 +996,22 @@ Se não souber o nome de alguém, escreve "não identificado". Não invente nome
 Monta uma planilha-índice com uma linha por arquivo: nome, link, tipo, data, o que é (1 frase) e quando eu usaria.
 Não move, não renomeia e não apaga nada. Só lê e cataloga.</pre></div>
 
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Quanto mais arrumada a base, menos o Claude gasta para achar a caneta azul. Poucas pastas, nomes que explicam e um índice.</p></div>
+  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Quanto mais arrumada a base, menos o Claude gasta para achar a caneta azul. Comece dando uma ficha para cada arquivo.</p></div>
   <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
     <ul class="checkpoints__list">
       <li><span class="check"></span><span>Sei explicar a imagem da caneta azul.</span></li>
-      <li><span class="check"></span><span>Sei as 4 regras da gaveta organizada.</span></li>
+      <li><span class="check"></span><span>Sei indexar uma pasta de fotos para achar a foto certa depois.</span></li>
       <li><span class="check"></span><span>Sei pedir um índice sem que o Claude mexa nos arquivos.</span></li>
     </ul>
   </div>
 </article>
 
-<article id="m10" class="module" data-aula="2" data-title="As ferramentas do Claude">
-  <div class="module__eyebrow">Parte 2 · Módulo 06</div>
-  <h1 class="module__title">Pilar 2: por onde <span class="accent">o Claude opera.</span></h1>
-  <span class="module__tag">Ferramentas</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Conector, skill, rotina e Chrome: quatro jeitos de o Claude trabalhar, cada um para uma coisa.</p></div>
-  <p class="lead">São quatro ferramentas e elas não são intercambiáveis. Saber qual usar é metade da produtividade.</p>
-
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Ferramenta</th><th>O que é</th><th>Use quando</th><th>Exemplo</th></tr></thead>
-    <tbody>
-      <tr><td>Conector</td><td>Uma ligação direta com um app (Gmail, Drive, Agenda, Notion, ClickUp, Fathom). Ele lê e escreve lá dentro sem abrir o navegador.</td><td>O app tem conector. É o caminho mais rápido e mais barato.</td><td>"Arquiva todas as newsletters da semana."</td></tr>
-      <tr><td>Skill</td><td>Uma receita salva: um arquivo que ensina o Claude a fazer uma tarefa do seu jeito, sempre igual.</td><td>Você repete a mesma tarefa e cansou de explicar.</td><td>Skill de e-mail; skill de aula (esta página foi feita com uma).</td></tr>
-      <tr><td>Rotina</td><td>Uma tarefa agendada que roda sozinha num horário, sem você abrir conversa.</td><td>A tarefa tem hora certa: todo dia, toda segunda.</td><td>Todo dia às 7h: o que vence hoje e o que ficou combinado ontem.</td></tr>
-      <tr><td>Claude in Chrome</td><td>O Claude controlando o seu navegador: clica, digita, rola, baixa.</td><td>O site não tem conector. É o último recurso.</td><td>Copiar os inscritos de uma plataforma para uma planilha.</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h2>Conectores que valem a pena</h2>
-  <p>Cada conector abre uma gaveta. Alguns que fazem diferença no dia a dia de quem é médico e pesquisador:</p>
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Conector</th><th>Gaveta que abre</th><th>Exemplo de pedido</th></tr></thead>
-    <tbody>
-      <tr><td>PubMed</td><td>Os artigos científicos da base PubMed.</td><td>"Busca os ensaios clínicos dos últimos 5 anos sobre [tema] e me faz uma tabela com autor, ano e resultado principal."</td></tr>
-      <tr><td>Gmail</td><td>Seus e-mails.</td><td>"Quais e-mails desta semana precisam de resposta minha?"</td></tr>
-      <tr><td>Google Agenda</td><td>Seus compromissos.</td><td>"O que eu tenho amanhã? Tem algum buraco de 1 hora?"</td></tr>
-      <tr><td>Google Drive</td><td>Seus documentos e planilhas.</td><td>"Acha o contrato que assinei em março."</td></tr>
-      <tr><td>Zoom</td><td>Suas reuniões online.</td><td>"Marca um Zoom com a Júlia na terça às 15h."</td></tr>
-      <tr><td>Fathom</td><td>As gravações e transcrições das suas reuniões.</td><td>"O que eu prometi na reunião de ontem?"</td></tr>
-      <tr><td>ClickUp ou Notion</td><td>Suas tarefas e anotações.</td><td>"Cria a tarefa de mandar o artigo até sexta."</td></tr>
-      <tr><td>Canva</td><td>Suas artes e apresentações.</td><td>"Faz uma arte de convite para a aula de quinta."</td></tr>
-      <tr><td>Higgsfield</td><td>Criação de imagens e vídeos.</td><td>"Cria uma ilustração para a capa da aula."</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>A lista cresce toda semana. Para ver todos, abra a área de conectores do app e navegue pelo catálogo. Ou pergunte ao Claude: <em>"existe conector para [app que eu uso]?"</em>.</p>
-
-  <div class="callout">
-    <div class="callout__label">◆ A ordem de escolha</div>
-    <p><strong>Conector</strong> → se não existe, <strong>Chrome</strong>. Se você vai repetir, vira <strong>skill</strong>. Se tem hora certa, vira <strong>rotina</strong>.</p>
-  </div>
-
-  <h2>Como criar uma rotina</h2>
-  <p>Peça no chat, com dia e hora. O Claude cria a rotina e ela aparece na lista de tarefas agendadas do app, onde você pode pausar ou editar.</p>
-  <div class="prompt"><div class="prompt__head"><span>Prompt · criar rotina</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma tarefa agendada que roda de segunda a sexta às 7h: lê minha agenda do dia, os e-mails não lidos que precisam de resposta minha e as tarefas atrasadas, e me entrega um resumo de 10 linhas.</pre></div>
-  <div class="callout callout--warn">
-    <div class="callout__label">◆ Detalhe prático</div>
-    <p>No app, a rotina aparece como <strong>Tarefa agendada</strong>. Ela só roda com o computador acordado e o app do Claude aberto; se perdeu o horário, roda uma vez quando você abrir o app. Depois de criar, abra a lista de tarefas agendadas, clique em <strong>Rodar agora</strong> e, a cada pedido de permissão, escolha <strong>permitir sempre</strong>. Sem isso, a rotina fica parada esperando a sua aprovação.</p>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Conector para apps, Chrome para o resto, skill para o que se repete e rotina para o que tem hora.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Sei explicar a diferença entre conector, skill, rotina e Chrome.</span></li>
-      <li><span class="check"></span><span>Sei que o Chrome é o último recurso.</span></li>
-      <li><span class="check"></span><span>Sei pedir uma rotina com dia e hora.</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m11" class="module" data-aula="2" data-title="Skills que andam com você">
-  <div class="module__eyebrow">Parte 2 · Módulo 07</div>
+<article id="m11" class="module" data-aula="2" data-title="Skills e rotinas">
+  <div class="module__eyebrow">Parte 2 · Módulo 05</div>
   <h1 class="module__title">Skills: o contexto <span class="accent">que anda com você.</span></h1>
   <span class="module__tag">Ferramentas</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Uma skill é uma receita que você salva uma vez e usa em qualquer conversa. A melhor guarda também o porquê das suas decisões.</p></div>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Uma skill é uma receita que você salva uma vez e usa em qualquer conversa. Com hora marcada, ela vira rotina.</p></div>
   <p class="lead">Uma skill é um contexto que você carrega para qualquer conversa. Você não precisa voltar naquela janela antiga em que explicou tudo sobre o seu produto. Chama a skill e o Claude já sabe.</p>
 
   <h2>Cruzar duas skills</h2>
@@ -1094,7 +1030,7 @@ Não move, não renomeia e não apaga nada. Só lê e cataloga.</pre></div>
   </div>
 
   <h2>Da conversa boa para a skill</h2>
-  <p>Sabe aquela conversa em que você explicou tudo, corrigiu o Claude dez vezes e no fim ficou perfeito? Ela fica presa naquela conversa: cada conversa nova começa sem saber nada disso. Transforme em skill.</p>
+  <p>Sabe aquela conversa em que você explicou tudo, corrigiu o Claude dez vezes e no fim ficou perfeito? Ela fica presa naquela conversa: cada conversa nova começa sem saber nada disso. A skill leva o que aquela conversa aprendeu para qualquer conversa nova.</p>
   <ol>
     <li>Na conversa boa, cole o prompt abaixo.</li>
     <li>O Claude cria o arquivo da skill.</li>
@@ -1143,10 +1079,6 @@ Não move, não renomeia e não apaga nada. Só lê e cataloga.</pre></div>
 Em cada passo, se faltar alguma informação, me pergunta em vez de inventar.
 Antes de criar ou mudar qualquer coisa em outro app, me mostra o que vai fazer.
 Me mostra a skill inteira antes de salvar.</pre></div>
-  <div class="callout">
-    <div class="callout__label">◆ Skill ou rotina?</div>
-    <p>A <strong>skill</strong> é a receita: o passo a passo. Você chama quando quiser: <em>"roda a skill reuniao-para-tarefas"</em>. Quando você quer que essa mesma receita seja feita <strong>todo dia, sozinha</strong>, ela vira uma <strong>rotina</strong> (no app, tarefa agendada): <em>"cria uma tarefa agendada que roda a skill reuniao-para-tarefas todo dia às 19h"</em>.</p>
-  </div>
 
   <h2>Tipo 3: a base de conhecimento</h2>
   <p>Aqui a skill guarda um assunto inteiro, organizado e com índice, para o Claude consultar sempre que você precisar. Ela é o segundo cérebro (Pilar 1) em forma de skill: você chama de qualquer conversa.</p>
@@ -1197,18 +1129,27 @@ No fim, escreve cada regra no formato Quando / Faça / Por quê / Exceto e me mo
     <p>As transcrições das suas reuniões estão cheias de decisões explicadas. Peça: <em>"lê minhas últimas 3 reuniões, acha as decisões que eu expliquei e escreve cada uma no formato Quando / Faça / Por quê / Exceto"</em>.</p>
   </div>
 
-  <h2>Skills que valem a pena ter</h2>
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Skill</th><th>Guarda</th></tr></thead>
-    <tbody>
-      <tr><td>Do produto</td><td>O que você vende: programa, preço, garantia, dúvidas frequentes.</td></tr>
-      <tr><td>De e-mail</td><td>A estrutura dos seus e-mails e o seu tom.</td></tr>
-      <tr><td>De roteiro</td><td>Como você escreve anúncio: gancho, prova, chamada.</td></tr>
-      <tr><td>De voz</td><td>Como um especialista fala: palavras, ritmo, o que ele nunca diz.</td></tr>
-      <tr><td>De aula</td><td>Como transformar uma aula num material como este.</td></tr>
-    </tbody>
-  </table>
+  <h2>Da skill para a rotina</h2>
+  <p>A <strong>skill</strong> é a receita: você chama quando quiser (<em>"roda a skill reuniao-para-tarefas"</em>). Quando a mesma receita precisa rodar todo dia sozinha, ela vira <strong>rotina</strong>: <em>"cria uma tarefa agendada que roda a skill reuniao-para-tarefas todo dia às 19h"</em>.</p>
+  <p>Peça no chat, com dia e hora. O Claude cria a rotina e ela aparece na lista de tarefas agendadas do app, onde você pode pausar ou editar.</p>
+  <div class="prompt"><div class="prompt__head"><span>Prompt · criar rotina</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma tarefa agendada que roda de segunda a sexta às 7h: lê minha agenda do dia, os e-mails não lidos que precisam de resposta minha e as tarefas atrasadas, e me entrega um resumo de 10 linhas.</pre></div>
+  <div class="callout callout--warn">
+    <div class="callout__label">◆ Detalhe prático</div>
+    <p>Ela só roda com o computador acordado e o app do Claude aberto; se perdeu o horário, roda uma vez quando você abrir o app. Depois de criar, abra a lista de tarefas agendadas, clique em <strong>Rodar agora</strong> e, a cada pedido de permissão, escolha <strong>permitir sempre</strong>. Sem isso, a rotina fica parada esperando a sua aprovação.</p>
+  </div>
+
+  <h2>Como instalar e usar uma skill</h2>
+  <div class="kv">
+    <div class="kv__row"><div class="kv__key">Instalar</div><div class="kv__val">Recebeu o arquivo de uma skill? Salve o arquivo dentro da sua pasta Claude e peça: <em>"instala a skill que está no arquivo [NOME] como skill pessoal, para valer em qualquer pasta"</em>.</div></div>
+    <div class="kv__row"><div class="kv__key">Conferir</div><div class="kv__val">Pergunte <em>"quais skills você tem instaladas?"</em>. A nova deve aparecer na lista.</div></div>
+    <div class="kv__row"><div class="kv__key">Usar</div><div class="kv__val">Chame pelo nome no pedido: <em>"usa a skill X para..."</em>. O Claude também usa a skill sozinho quando o pedido combina com a descrição dela.</div></div>
+  </div>
+
+  <h2>Atualizar e escolher entre skill e Project</h2>
+  <p>Skill não é pedra: peça <em>"atualiza a skill X com o que a gente corrigiu hoje"</em> e ela melhora a cada uso.</p>
+  <div class="callout">
+    <div class="callout__label">◆ Skill ou Project?</div>
+    <p><strong>Project</strong> é o recurso da aba Chat que guarda arquivos e instruções de um assunto. Ele é uma gaveta fechada: o que está nele só vale lá dentro. A <strong>skill</strong> entra em qualquer conversa, e duas podem trabalhar juntas. Use Project para um assunto fechado que você vai consultar pelo celular, sem depender do computador ligado, como o roteiro de uma viagem. Para o que você usa em vários lugares, skill.</p>
   </div>
 
   <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Skill é contexto portátil. Cruze duas para ter fato e forma juntos. Conversa boa vira skill, e skill nova sempre passa pela sua leitura.</p></div>
@@ -1221,12 +1162,13 @@ No fim, escreve cada regra no formato Quando / Faça / Por quê / Exceto e me mo
       <li><span class="check"></span><span>Sei os três tipos de skill boa: como eu decido, passo a passo e base de conhecimento.</span></li>
       <li><span class="check"></span><span>Sei a diferença entre skill (a receita) e rotina (a receita com hora marcada).</span></li>
       <li><span class="check"></span><span>Sei escrever uma regra no formato Quando / Faça / Por quê / Exceto.</span></li>
+      <li><span class="check"></span><span>Sei quando usar skill e quando usar Project.</span></li>
     </ul>
   </div>
 </article>
 
-<article id="m22" class="module" data-aula="2" data-title="Ser um bom feedbacker">
-  <div class="module__eyebrow">Parte 2 · Módulo 08</div>
+<article id="m22" class="module" data-aula="2" data-title="Saber dar feedback">
+  <div class="module__eyebrow">Parte 2 · Módulo 06</div>
   <h1 class="module__title">A habilidade que mais importa: <span class="accent">dar feedback.</span></h1>
   <span class="module__tag">Ferramentas</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Diga exatamente onde está o problema e por quê. Quem dá feedback claro ensina o Claude (e as pessoas) mais rápido.</p></div>
@@ -1282,10 +1224,6 @@ Eu vou escolher as que mais me agradarem e você refina a partir delas.</pre></d
     <li>Vá comentando no caminho: "aqui no título eu não gostei disso, por causa daquilo", "essa frase eu gostei, mantém".</li>
     <li>No fim, peça: <em>"aplica tudo o que eu falei e me diz quais comentários viraram regra"</em>.</li>
   </ol>
-  <div class="callout callout--good">
-    <div class="callout__label">◆ Grave a sua tela</div>
-    <p>Grave a tela enquanto revisa falando. Você vê depois onde foi vago, e a gravação vira material para ensinar o seu time a revisar do mesmo jeito.</p>
-  </div>
 
   <div class="callout">
     <div class="callout__label">◆ Corrija o detalhe</div>
@@ -1307,100 +1245,18 @@ Depois me mostra em duas listas:
   </div>
 </article>
 
-<article id="m12" class="module" data-aula="2" data-title="Gastar menos inteligência">
-  <div class="module__eyebrow">Parte 2 · Módulo 09</div>
-  <h1 class="module__title">Duas formas de <span class="accent">não desperdiçar inteligência.</span></h1>
-  <span class="module__tag">Ferramentas</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Conversa limpa e ferramenta certa fazem o seu plano durar o mês inteiro.</p></div>
-  <p class="lead">Quem estoura o limite do plano no meio da semana quase sempre cometeu um destes dois erros: mesa lotada ou ferramenta errada.</p>
-
-  <h2>Erro 1: mesa lotada</h2>
-  <p>É o que você viu no módulo da janela de contexto. Conversa de três horas, 20 transcrições abertas, o mesmo assunto explicado de novo em cada conversa. A solução é <code>/compact</code>, conversa nova, CLAUDE.md e segundo cérebro.</p>
-
-  <h2>Erro 2: ferramenta errada</h2>
-  <ul>
-    <li>Usar o <strong>Chrome</strong> para ler e-mail quando existe conector do Gmail. O Chrome tira foto da tela a cada passo e isso pesa muito.</li>
-    <li>Pedir para ler <strong>300 arquivos inteiros</strong> quando um índice resolveria.</li>
-    <li>Usar o modelo mais potente para renomear arquivos. Tarefa simples pode ir num modelo mais leve.</li>
-  </ul>
-
-  <div class="ref ref--tip">
-    <div class="ref__head"><span class="ref__badge">Skills da aula</span><span class="ref__source">/compact e Advisor</span></div>
-    <p><strong>/compact:</strong> o comando do próprio app que resume a conversa e libera a mesa. Digite <code>/compact</code> na caixa de mensagem.</p>
-    <p><strong>Advisor:</strong> antes de uma tarefa grande, consulta qual é o caminho mais barato e certo (conector, skill ou Chrome) e qual modelo usar.</p>
-  </div>
-
-  <h2>Como instalar e usar uma skill</h2>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">Instalar</div><div class="kv__val">Recebeu o arquivo de uma skill? Salve o arquivo dentro da sua pasta Claude e peça: <em>"instala a skill que está no arquivo [NOME] como skill pessoal, para valer em qualquer pasta"</em>.</div></div>
-    <div class="kv__row"><div class="kv__key">Conferir</div><div class="kv__val">Pergunte <em>"quais skills você tem instaladas?"</em>. A nova deve aparecer na lista.</div></div>
-    <div class="kv__row"><div class="kv__key">Usar</div><div class="kv__val">Chame pelo nome no pedido: <em>"usa a skill X para..."</em>. O Claude também usa a skill sozinho quando o pedido combina com a descrição dela.</div></div>
-  </div>
-
-  <h2>Compact e Advisor no dia a dia</h2>
-  <div class="kv">
-    <div class="kv__row"><div class="kv__key">Advisor · antes</div><div class="kv__val">Antes de uma tarefa grande: <em>"usa a skill advisor: quero [TAREFA]. Qual o caminho que gasta menos e qual modelo eu uso?"</em>. Ele responde com o plano, e você só depois manda fazer.</div></div>
-    <div class="kv__row"><div class="kv__key">/compact · durante</div><div class="kv__val">Quando a conversa ficou longa e a tarefa continua, digite <code>/compact</code>. O app resume o que importa e segue com a mesa limpa.</div></div>
-    <div class="kv__row"><div class="kv__key">Conversa nova · depois</div><div class="kv__val">Terminou a tarefa, abra outra conversa para a próxima.</div></div>
-  </div>
-
-  <div class="callout callout--good">
-    <div class="callout__label">◆ Hábito</div>
-    <p>Antes de uma tarefa grande, pergunte: <em>"qual o jeito que gasta menos para fazer isso?"</em>. O Claude sabe responder.</p>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem deste módulo</div><p>Mesa limpa e ferramenta certa. É assim que o plano dura a semana inteira e as respostas continuam boas.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Antes de seguir</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Sei por que conector gasta menos que Chrome.</span></li>
-      <li><span class="check"></span><span>Sei pedir o caminho mais barato antes de uma tarefa grande.</span></li>
-      <li><span class="check"></span><span>Sei quando usar o Advisor (antes) e o /compact (durante).</span></li>
-    </ul>
-  </div>
-</article>
-
-<article id="m13" class="module" data-aula="2" data-title="Os assistentes">
-  <div class="module__eyebrow">Parte 2 · Módulo 10</div>
+<article id="m13" class="module" data-aula="2" data-title="Assistentes, ADM e Dispatch">
+  <div class="module__eyebrow">Parte 2 · Módulo 07</div>
   <h1 class="module__title">Pilar 3: os assistentes <span class="accent">que já trabalham por você.</span></h1>
   <span class="module__tag">Assistentes</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Apps que gravam reuniões, marcam reuniões, guardam tarefas e criam imagens, com uma conversa ADM sempre aberta para pedir tudo.</p></div>
   <p class="lead">Você não precisa construir tudo dentro do Claude. Alguns apps fazem o trabalho pesado, e o Claude junta as pontas.</p>
 
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Assistente</th><th>Faz</th><th>Exemplos</th></tr></thead>
-    <tbody>
-      <tr><td>Organizador de tarefas</td><td>Guarda o que precisa ser feito, por quem e até quando.</td><td>Notion, ClickUp</td></tr>
-      <tr><td>Transcritor de reuniões</td><td>Grava, transcreve e resume cada reunião.</td><td>Fathom</td></tr>
-      <tr><td>Agenda de reuniões</td><td>Marca reuniões, cria o link da chamada e manda o convite.</td><td>Zoom, Google Agenda</td></tr>
-      <tr><td>Criador de imagens e vídeos</td><td>Cria imagens e vídeos a partir de um texto. Conecta ao Claude, que escreve o pedido por você.</td><td>Higgsfield</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h2>O fluxo que fecha o ciclo</h2>
-  <div class="fc">
-  <div class="fc__box"><span class="fc__n">1</span><span class="fc__t">Reunião acontece</span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">2</span><span class="fc__t">O Fathom grava e transcreve</span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">3</span><span class="fc__t">O Claude lê e acha os combinados<small>o que, para quem, até quando</small></span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">4</span><span class="fc__t">Vira tarefa no Notion ou ClickUp</span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box fc__box--end"><span class="fc__n">5</span><span class="fc__t">A rotina te lembra no horário<small>7h ou 19h</small></span></div>
-</div>
-  <p>Cada peça sozinha ajuda pouco. O Fathom sozinho gera resumos que ninguém lê. O ClickUp sozinho depende de você lembrar de anotar. Juntos, com o Claude no meio, o combinado vira tarefa sem você digitar nada.</p>
+  <p>Os conectores que você ligou na Parte 1 dão acesso a apps que já fazem o trabalho pesado: o organizador de tarefas (ClickUp, Notion), o transcritor de reuniões (Fathom), a agenda (Zoom, Google Agenda) e o criador de imagens (Higgsfield). Você não precisa reconstruir nenhum deles dentro do Claude. Aqui entram duas formas de usar tudo isso junto: a conversa ADM e o Dispatch.</p>
 
   <div class="callout callout--good">
     <div class="callout__label">◆ Exemplo real: as ilustrações desta aula</div>
     <p>As ilustrações desta página foram feitas assim: o Claude escreveu a descrição de cada cena e pediu as imagens ao Higgsfield, tudo na mesma conversa. Serve para post, capa de aula, arte de anúncio.</p>
-  </div>
-
-  <div class="callout">
-    <div class="callout__label">◆ Como ligar</div>
-    <p>Notion, ClickUp, Zoom, Fathom e Higgsfield têm conector no Claude (na área de conectores do app, junto de plugins e skills). Se o Fathom não aparecer na sua lista, configure o Fathom para salvar os resumos numa pasta do Drive e o Claude lê de lá.</p>
   </div>
 
   <h2>A janela ADM: o seu administrativo sempre aberto</h2>
@@ -1436,6 +1292,7 @@ Confirma que entendeu e me diz quais desses apps estão conectados.</pre></div>
   <div class="kv">
     <div class="kv__row"><div class="kv__key">Precisa de</div><div class="kv__val">O app do Claude no computador e no celular, na mesma conta, com plano pago.</div></div>
     <div class="kv__row"><div class="kv__key">Atenção</div><div class="kv__val">O computador precisa estar ligado, sem dormir, e com o app do Claude aberto enquanto ele trabalha.</div></div>
+    <div class="kv__row"><div class="kv__key">Alcance</div><div class="kv__val">Ele só alcança as pastas e os conectores que você já liberou no computador.</div></div>
     <div class="kv__row"><div class="kv__key">Bom para</div><div class="kv__val">Tarefas que dependem de arquivos do computador e que você não consegue fazer pelo celular.</div></div>
   </div>
   <div class="callout callout--warn">
@@ -1449,7 +1306,7 @@ Confirma que entendeu e me diz quais desses apps estão conectados.</pre></div>
     <ul class="checkpoints__list">
       <li><span class="check"></span><span>Escolhi meu organizador de tarefas (Notion ou ClickUp).</span></li>
       <li><span class="check"></span><span>Tenho um transcritor de reuniões instalado.</span></li>
-      <li><span class="check"></span><span>Sei desenhar o fluxo reunião → tarefa → lembrete.</span></li>
+      
       <li><span class="check"></span><span>Criei e fixei a minha conversa ADM.</span></li>
       <li><span class="check"></span><span>(Opcional) Sei o que é o Dispatch e o que ele precisa para funcionar.</span></li>
     </ul>
@@ -1458,75 +1315,8 @@ Confirma que entendeu e me diz quais desses apps estão conectados.</pre></div>
 
 <!-- ===================== PARTE 3 · MÃO NA MASSA ===================== -->
 
-<article id="m14" class="module" data-aula="3" data-title="Segundo cérebro automático">
-  <div class="module__eyebrow">Parte 3 · Atividade 01</div>
-  <h1 class="module__title">Seu segundo cérebro <span class="accent">se alimentando sozinho.</span></h1>
-  <span class="module__tag tag--case">Skill + Rotina + Fathom</span>
-  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Todo dia, o Claude lê suas reuniões e guarda no seu cérebro só o que é ideia nova.</p></div>
-  <p class="lead">Todo dia, o Claude lê as reuniões novas do Fathom, guarda as transcrições e passa para o cérebro só o que for ideia nova. Você escolhe quais tipos de reunião viram cérebro e em qual lobo cada uma entra.</p>
-
-<div class="fc">
-  <div class="fc__box"><span class="fc__n">1</span><span class="fc__t">Todo dia às 7h, a rotina acorda</span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">2</span><span class="fc__t">Lê as reuniões novas do Fathom</span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">3</span><span class="fc__t">Guarda as transcrições numa pasta<small>a matéria-prima</small></span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box"><span class="fc__n">4</span><span class="fc__t">Separa por tipo de reunião<small>mentoria, trabalho, pessoal</small></span></div>
-  <div class="fc__arrow"></div>
-  <div class="fc__box fc__box--end"><span class="fc__n">5</span><span class="fc__t">Só a ideia nova entra no lobo certo<small>sem repetir nota</small></span></div>
-</div>
-
-  <h2>Passo 1: decidir o que vira cérebro</h2>
-  <p>Nem toda reunião merece. Faça uma tabelinha antes de começar:</p>
-  <div class="table-wrap">
-  <table class="data-table">
-    <thead><tr><th>Tipo de reunião</th><th>Vai para o lobo</th></tr></thead>
-    <tbody>
-      <tr><td>Mentoria com aluno</td><td>mentoria</td></tr>
-      <tr><td>Reunião de time, lançamento</td><td>trabalho</td></tr>
-      <tr><td>Consulta, planejamento pessoal</td><td>pessoal</td></tr>
-      <tr><td>Reunião de fornecedor, conversa rápida</td><td>só guarda a transcrição, não vira cérebro</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h2>Passo 2: criar a skill</h2>
-  <div class="prompt"><div class="prompt__head"><span>Prompt · skill alimentar o cérebro</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma skill chamada "alimentar-cerebro" que faz o seguinte:
-1. Lê as reuniões do Fathom desde a última vez que a skill rodou (guarda a data num arquivo). Na primeira vez, lê só a última semana.
-2. Salva cada transcrição em conhecimento/reunioes/ com o nome AAAA-MM-DD_titulo-da-reuniao.md.
-3. Classifica cada reunião com esta tabela: <mark class="ph">[COLE SUA TABELA DE TIPOS E LOBOS]</mark>.
-4. Para as que vão para o cérebro, tira só o que é ideia: princípio, decisão, método, exemplo bom. Ignora conversa solta.
-5. Antes de criar uma nota, procura no lobo se a ideia já existe. Se existe, acrescenta o exemplo novo na nota antiga. Só cria nota nova para ideia nova.
-6. Cada nota tem: título, premissa em 1 frase, por quê, exemplos com data da reunião, fonte.
-7. Atualiza o cerebro/indice.md.
-8. No fim, me mostra o que entrou, o que foi atualizado e o que foi ignorado.</pre></div>
-
-  <h2>Passo 3: testar uma vez na mão</h2>
-  <p>Peça <em>"roda a skill alimentar-cerebro para as reuniões da última semana"</em> e leia as notas que saíram. Corrija o que não for seu jeito e peça para ele atualizar a skill com as correções.</p>
-
-  <h2>Passo 4: virar rotina</h2>
-  <div class="prompt"><div class="prompt__head"><span>Prompt · rotina diária</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma tarefa agendada local, neste computador e nesta pasta, que roda todo dia às 7h e usa a skill alimentar-cerebro.</pre></div>
-
-  <div class="callout callout--good">
-    <div class="callout__label">◆ Por que a regra 5 é a mais importante</div>
-    <p>Sem ela, a ideia do personal statement vira 20 notas iguais e você volta ao problema do conhecimento acumulado. Com ela, vira uma nota com 20 exemplos.</p>
-  </div>
-
-  <div class="summary"><div class="summary__label">Mensagem desta atividade</div><p>Reunião vira transcrição, transcrição vira ideia, ideia entra no lobo certo sem repetir. Todo dia, sozinho.</p></div>
-  <div class="checkpoints">
-    <div class="checkpoints__head"><h3 class="checkpoints__title">Fiz a atividade</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">4</span> checados</span></div>
-    <ul class="checkpoints__list">
-      <li><span class="check"></span><span>Montei minha tabela de tipos de reunião e lobos.</span></li>
-      <li><span class="check"></span><span>Criei a skill alimentar-cerebro.</span></li>
-      <li><span class="check"></span><span>Testei com a última semana e corrigi as notas.</span></li>
-      <li><span class="check"></span><span>Deixei a rotina diária agendada.</span></li>
-    </ul>
-  </div>
-</article>
-
 <article id="m15" class="module" data-aula="3" data-title="Sair das listas de e-mail">
-  <div class="module__eyebrow">Parte 3 · Atividade 02</div>
+  <div class="module__eyebrow">Parte 3 · Atividade 01</div>
   <h1 class="module__title">Sair das listas <span class="accent">e ver a caixa com clareza.</span></h1>
   <span class="module__tag tag--case">Conector Gmail + Chrome</span>
   <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>O Claude descobre de quais listas você recebe e-mail e te ajuda a sair delas.</p></div>
@@ -1575,6 +1365,11 @@ Não mexe em nada ainda.</pre></div>
     <p>Só descadastre de quem você reconhece. Link de descadastro em e-mail desconhecido pode ser golpe: no caso de spam, é melhor marcar como spam.</p>
   </div>
 
+
+  <div class="callout callout--good">
+    <div class="callout__label">◆ Exemplos reais</div>
+    <p>A Ana pediu ao Claude a lista de tudo em que estava cadastrada, separada por categoria, e marcou numa lista de seleção do que queria sair. O Claude trabalhou umas duas horas sozinho, enquanto ela jantava. Hoje chegam dois ou três e-mails por dia. Durante a aula, uma aluna etiquetou todos os e-mails de submissão de artigos e, em quatro minutos, viu em que revista estava cada um.</p>
+  </div>
   <div class="summary"><div class="summary__label">Mensagem desta atividade</div><p>Levantar, aprovar, arquivar, descadastrar. Você sai das listas e a caixa que sobra é só do que importa.</p></div>
   <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Fiz a atividade</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
@@ -1586,7 +1381,74 @@ Não mexe em nada ainda.</pre></div>
   </div>
 </article>
 
-<article id="m16" class="module" data-aula="3" data-title="O assistente que lembra">
+<article id="m14" class="module" data-aula="3" data-title="Segundo cérebro automático">
+  <div class="module__eyebrow">Parte 3 · Atividade 02</div>
+  <h1 class="module__title">Seu segundo cérebro <span class="accent">se alimentando sozinho.</span></h1>
+  <span class="module__tag tag--case">Skill + Rotina + Fathom</span>
+  <div class="oneline"><span class="oneline__tag">Em uma frase</span><p>Todo dia, o Claude lê suas reuniões e guarda no seu cérebro só o que é ideia nova.</p></div>
+  <p class="lead">Todo dia, o Claude lê as reuniões novas do Fathom, guarda as transcrições e passa para o cérebro só o que for ideia nova. Você escolhe quais tipos de reunião viram cérebro e em qual lobo cada uma entra.</p>
+
+<div class="fc">
+  <div class="fc__box"><span class="fc__n">1</span><span class="fc__t">Todo dia às 7h, a rotina acorda</span></div>
+  <div class="fc__arrow"></div>
+  <div class="fc__box"><span class="fc__n">2</span><span class="fc__t">Lê as reuniões novas do Fathom</span></div>
+  <div class="fc__arrow"></div>
+  <div class="fc__box"><span class="fc__n">3</span><span class="fc__t">Guarda as transcrições numa pasta<small>a matéria-prima</small></span></div>
+  <div class="fc__arrow"></div>
+  <div class="fc__box"><span class="fc__n">4</span><span class="fc__t">Separa por tipo de reunião<small>mentoria, trabalho, pessoal</small></span></div>
+  <div class="fc__arrow"></div>
+  <div class="fc__box fc__box--end"><span class="fc__n">5</span><span class="fc__t">Só a ideia nova entra no lobo certo<small>sem repetir nota</small></span></div>
+</div>
+
+  <h2>Passo 1: decidir o que vira cérebro</h2>
+  <p>Nem toda reunião merece. Faça uma tabelinha antes de começar:</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Tipo de reunião</th><th>Vai para o lobo</th></tr></thead>
+    <tbody>
+      <tr><td>Mentoria com aluno</td><td>mentoria</td></tr>
+      <tr><td>Reunião de time, lançamento</td><td>trabalho</td></tr>
+      <tr><td>Consulta, planejamento pessoal</td><td>pessoal</td></tr>
+      <tr><td>Reunião de fornecedor, conversa rápida</td><td>só guarda a transcrição, não vira cérebro</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Passo 2: criar a skill</h2>
+  <div class="prompt"><div class="prompt__head"><span>Prompt · skill alimentar o cérebro</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma skill chamada "alimentar-cerebro" que faz o seguinte:
+1. Lê as reuniões do Fathom desde a última vez que a skill rodou (guarda a data num arquivo). Na primeira vez, lê só a última semana.
+2. Salva cada transcrição em conhecimento/reunioes/ com o nome AAAA-MM-DD_titulo-da-reuniao.md.
+3. Classifica cada reunião com esta tabela: <mark class="ph">[COLE SUA TABELA DE TIPOS E LOBOS]</mark>.
+4. Para as que vão para o cérebro, tira só o que é ideia: princípio, decisão, método, exemplo bom. Ignora conversa solta.
+5. Antes de criar uma nota, procura no lobo se a ideia já existe. Se a ideia nova contradiz uma nota existente, não escolhe: me pergunta qual vale. Se existe, acrescenta o exemplo novo na nota antiga. Só cria nota nova para ideia nova.
+6. Cada nota tem: título, premissa em 1 frase, por quê, exemplos com data da reunião, fonte.
+7. Atualiza o cerebro/indice.md.
+8. No fim, me mostra o que entrou, o que foi atualizado e o que foi ignorado.</pre></div>
+
+  <h2>Passo 3: testar uma vez na mão</h2>
+  <p>Peça <em>"roda a skill alimentar-cerebro para as reuniões da última semana"</em> e leia as notas que saíram. Corrija o que não for seu jeito e peça para ele atualizar a skill com as correções.</p>
+
+  <h2>Passo 4: virar rotina</h2>
+  <div class="prompt"><div class="prompt__head"><span>Prompt · rotina diária</span><button class="prompt__copy">Copiar</button></div><pre>Cria uma tarefa agendada local, neste computador e nesta pasta, que roda todo dia às 7h e usa a skill alimentar-cerebro.</pre></div>
+
+  <div class="callout callout--good">
+    <div class="callout__label">◆ Por que a regra 5 é a mais importante</div>
+    <p>Sem ela, a ideia do personal statement vira 20 notas iguais e você volta ao problema do conhecimento acumulado. Com ela, vira uma nota com 20 exemplos.</p>
+  </div>
+
+  <div class="summary"><div class="summary__label">Mensagem desta atividade</div><p>Reunião vira transcrição, transcrição vira ideia, ideia entra no lobo certo sem repetir. Todo dia, sozinho.</p></div>
+  <div class="checkpoints">
+    <div class="checkpoints__head"><h3 class="checkpoints__title">Fiz a atividade</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">4</span> checados</span></div>
+    <ul class="checkpoints__list">
+      <li><span class="check"></span><span>Montei minha tabela de tipos de reunião e lobos.</span></li>
+      <li><span class="check"></span><span>Criei a skill alimentar-cerebro.</span></li>
+      <li><span class="check"></span><span>Testei com a última semana e corrigi as notas.</span></li>
+      <li><span class="check"></span><span>Deixei a rotina diária agendada.</span></li>
+    </ul>
+  </div>
+</article>
+
+<article id="m16" class="module" data-aula="3" data-title="O assistente que lembra o combinado">
   <div class="module__eyebrow">Parte 3 · Atividade 03</div>
   <h1 class="module__title">O assistente que lembra <span class="accent">o que você combinou.</span></h1>
   <span class="module__tag tag--case">Fathom + ClickUp/Notion + Rotina</span>
@@ -1664,6 +1526,11 @@ Me manda no fim o que foi movido e o que ficou de fora.</pre></div>
     <p>Mover um arquivo que outras pessoas usam pode quebrar o acesso delas. Por isso o prompt deixa os compartilhados de fora.</p>
   </div>
 
+
+  <div class="callout">
+    <div class="callout__label">◆ Nuvem ou computador?</div>
+    <p>O que está no Drive ou no Gmail já está na nuvem. Lista de pacientes, de clientes e o que for sensível fica numa pasta do seu computador, e você abre essa pasta só quando precisar. Lembre: o que o Claude lê é enviado para ele processar. Dado de paciente identificado não entra em pasta nenhuma que ele abra.</p>
+  </div>
   <div class="summary"><div class="summary__label">Mensagem desta atividade</div><p>Mapear, propor, executar, etiquetar, manter. Um Drive assim responde rápido para você e para o Claude.</p></div>
   <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Fiz a atividade</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
@@ -1778,7 +1645,7 @@ Regras para as próximas rodadas:
   </div>
 </article>
 
-<article id="m20" class="module" data-aula="3" data-title="Tarefas chatas no Chrome">
+<article id="m20" class="module" data-aula="3" data-title="Tarefas no Chrome e próximos passos">
   <div class="module__eyebrow">Parte 3 · Atividade 07</div>
   <h1 class="module__title">As tarefas chatas <span class="accent">o Claude faz no Chrome.</span></h1>
   <span class="module__tag tag--case">Claude in Chrome</span>
@@ -1806,11 +1673,15 @@ Faz as 2 primeiras e me mostra antes de seguir com o resto. Se aparecer algo dif
     </ul>
   </div>
   <div class="callout callout--warn">
-    <div class="callout__label">◆ Lembre do Pilar 2</div>
-    <p>O Chrome é a ferramenta que mais gasta. Se o site tem conector, use o conector. Se vai repetir todo mês, transforme em skill.</p>
+    <div class="callout__label">◆ O Chrome é o último recurso</div>
+    <p>Se o site tem conector, use o conector. Se vai repetir todo mês, transforme em skill.</p>
   </div>
 
   <div class="summary"><div class="summary__label">Mensagem desta atividade</div><p>Explique uma vez, confira as duas primeiras e deixe o Claude repetir o resto.</p></div>
+
+  <h2>Por onde começar</h2>
+  <p>Esta página serve de cardápio: ninguém faz tudo de uma vez. Comece pela gaveta que mais te irrita por estar longe ou bagunçada. Para a maioria das pessoas, é o Gmail.</p>
+  <p>Para dar uma ideia do ritmo: a Ana fez o primeiro curso de Claude em junho e criou a primeira skill dois meses depois.</p>
 
   <h2>Leve a aula para casa: a skill Claude na Rotina</h2>
   <p>Você não precisa fazer tudo hoje. A Ana preparou uma skill que vira o seu guia particular: ela te leva por cada passo desta aula, com calma, um de cada vez. Em qualquer passo você pode dizer <strong>"não estou pronto"</strong>, pular ou deixar para outro dia. Ela guarda onde você parou.</p>
@@ -1825,7 +1696,7 @@ Faz as 2 primeiras e me mostra antes de seguir com o resto. Se aparecer algo dif
   </div>
   <div class="prompt"><div class="prompt__head"><span>Prompt · instalar a skill da aula</span><button class="prompt__copy">Copiar</button></div><pre>Instala a skill que está no arquivo claude-na-rotina, aqui na minha pasta, como skill pessoal, para valer em qualquer pasta. Depois me confirma que ela aparece na lista de skills.</pre></div>
 
-  <figure class="fig" style="max-width:320px;margin:36px auto 0"><img src="img/brs-logo.png" alt="Boston Research Society" width="640" height="312" style="border:0;border-radius:0"></figure>
+  <figure class="fig fig--logo" style="max-width:200px;margin:40px auto 0"><img src="img/logo-official.png" alt="The Med Circle" width="1122" height="1402" style="border:0;border-radius:0;background:transparent;filter:none"></figure>
   <div class="summary"><div class="summary__label">Mensagem da aula</div><p>Conhecimento virando segundo cérebro, a ferramenta certa para cada tarefa e os assistentes ligados. Comece pela atividade que mais te irrita esta semana.</p></div>
     <div class="checkpoints">
     <div class="checkpoints__head"><h3 class="checkpoints__title">Fiz a atividade</h3><span class="checkpoints__count"><strong>0</strong>/<span class="total">3</span> checados</span></div>
@@ -1849,7 +1720,7 @@ Faz as 2 primeiras e me mostra antes de seguir com o resto. Se aparecer algo dif
 <script>
 (function () {
   'use strict';
-  var KEY = 'claude-na-rotina-v2';
+  var KEY = 'claude-na-rotina-v3';
   function load() { try { var r = localStorage.getItem(KEY); return r ? JSON.parse(r) : null; } catch (e) { return null; } }
   var state = load() || { cp: {}, aula: '1', id: null };
   function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
